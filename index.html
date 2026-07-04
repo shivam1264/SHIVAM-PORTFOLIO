@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shivam Kumar Maurya — Full-Stack & ML Software Engineer. National Hackathon Winner. B.Tech CSE student. Explore my projects and skills." />
+  <meta name="keywords" content="Shivam Kumar Maurya, full stack developer, machine learning, React, Flutter, Node.js, portfolio, hackathon winner" />
+  <meta name="author" content="Shivam Kumar Maurya" />
+  <meta property="og:title" content="Shivam Kumar Maurya — Portfolio" />
+  <meta property="og:description" content="Full-Stack & ML Engineer. National Hackathon Winner. B.Tech CSE 3rd Year." />
+  <meta property="og:type" content="website" />
+  <title>Shivam Kumar Maurya — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Custom Glow Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-glow"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-bar"></div>
+  </div>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader">
+    <div class="loader-logo">SKM.</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">SKM.</a>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Awards</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+            <i class="fas fa-moon moon-icon"></i>
+            <i class="fas fa-sun sun-icon"></i>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="navigation">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-mesh"></div>
+    <div id="hero-particles"><canvas id="particles-canvas"></canvas></div>
+
+    <div class="container">
+      <div class="hero-content">
+
+        <!-- Left -->
+        <div class="hero-left">
+          <div class="available-badge">
+            <span class="available-dot"></span>
+            Available for Internship &amp; Work
+          </div>
+          <div class="hero-greeting">
+            <span class="dot"></span>
+            Open to Internships &amp; Entry-Level Roles
+          </div>
+
+          <h1 class="hero-name">
+            <span class="word">Hi, I'm</span><br/>
+            <span class="word gradient-text">Shivam Kumar</span><br/>
+            <span class="word gradient-text">Maurya.</span>
+          </h1>
+
+          <div class="hero-title-badge">
+            <i class="fas fa-code"></i>
+            Full-Stack &amp; Machine Learning Engineer
+          </div>
+
+          <div class="hero-role">
+            I build
+            <div class="typewriter-wrapper">
+              <span class="typewriter-text" id="typewriter"></span>
+              <span class="cursor"></span>
+            </div>
+          </div>
+
+          <p class="hero-description">
+            3rd-year B.Tech CSE student passionate about scalable web apps, REST APIs, and ML systems.
+            <strong>National Hackathon Winner</strong> (INR 32,000+ prizes) with hands-on experience
+            in React, Flutter, Node.js, Python, and OpenCV. Cisco-certified.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" id="hero-work-btn">
+              <i class="fas fa-rocket"></i>
+              View My Work
+            </a>
+            <a href="#contact" class="btn btn-outline" id="hero-contact-btn">
+              <i class="fas fa-paper-plane"></i>
+              Hire Me
+            </a>
+          </div>
+
+          <div class="hero-social">
+            <span>Connect</span>
+            <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-link" id="hero-github" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener" class="social-link" id="hero-linkedin" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:mauryashivamkumar841@gmail.com" class="social-link" id="hero-email" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — Photo -->
+        <div class="hero-right">
+          <div class="profile-wrapper">
+            <div class="profile-ring"></div>
+            <div class="profile-ring-dash"></div>
+            <img
+              src="assets/profile.png"
+              alt="Shivam Kumar Maurya — Full-Stack & ML Engineer"
+              class="profile-img"
+              id="profile-photo"
+              loading="eager"
+            />
+
+            <div class="float-badge badge-1">
+              <span class="badge-icon">🏆</span>
+              <div>
+                <div class="badge-label">Hackathon Winner</div>
+                <div class="badge-value">2× National</div>
+              </div>
+            </div>
+
+            <div class="float-badge badge-2">
+              <span class="badge-icon">💻</span>
+              <div>
+                <div class="badge-label">Projects Built</div>
+                <div class="badge-value">10+</div>
+              </div>
+            </div>
+
+            <div class="float-badge badge-3">
+              <span class="badge-icon">🎓</span>
+              <div>
+                <div class="badge-label">B.Tech CSE</div>
+                <div class="badge-value">3rd Year</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" id="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       ABOUT
+  ══════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-image-wrap reveal-about-img">
+          <div class="about-glow-1"></div>
+          <div class="about-glow-2"></div>
+          <div class="about-img-frame">
+            <img src="assets/profile.png" alt="Shivam Kumar Maurya" id="about-photo" loading="lazy" />
+          </div>
+          <div class="about-experience-badge">
+            <span class="exp-num">3rd</span>
+            <span class="exp-label">Year B.Tech</span>
+          </div>
+        </div>
+
+        <div class="about-text reveal-about-text">
+          <div>
+            <div class="section-tag">About Me</div>
+            <h2 class="section-title">Building <span>Impactful</span> Software from Scratch</h2>
+          </div>
+
+          <!-- About Navigation Tabs -->
+          <div class="about-tabs-nav">
+            <button class="about-tab-btn active" data-tab="story" id="tab-btn-story">
+              <i class="fas fa-book-open"></i> My Story
+            </button>
+            <button class="about-tab-btn" data-tab="education" id="tab-btn-education">
+              <i class="fas fa-graduation-cap"></i> Education
+            </button>
+            <button class="about-tab-btn" data-tab="info" id="tab-btn-info">
+              <i class="fas fa-id-card"></i> Info & Stats
+            </button>
+            <button class="about-tab-btn" data-tab="approach" id="tab-btn-approach">
+              <i class="fas fa-drafting-compass"></i> My Approach
+            </button>
+          </div>
+
+          <!-- About Tab Contents -->
+          <div class="about-tabs-content">
+            
+            <!-- Tab Panel 1: Story -->
+            <div class="about-tab-panel active" id="tab-story">
+              <p class="about-bio">
+                I'm <strong>Shivam Kumar Maurya</strong>, a Full-Stack Software Engineer and Machine Learning enthusiast in my 3rd year of B.Tech CSE at <strong>Sagar Institute of Science, Technology and Research, Bhopal</strong>.
+              </p>
+              <p class="about-bio">
+                I specialise in building scalable web applications, cross-platform mobile apps, and intelligent ML systems. My engineering work is fueled by curiosity, a solid foundation in software architecture, and practical experience from development and hackathons.
+              </p>
+              <div class="fancy-quote">
+                "I don't just write code — I build solutions that make a real-world difference."
+              </div>
+            </div>
+
+            <!-- Tab Panel 2: Education -->
+            <div class="about-tab-panel" id="tab-education">
+              <div class="edu-timeline">
+
+                <div class="edu-item reveal">
+                  <div class="edu-degree">B.Tech in Computer Science and Engineering</div>
+                  <div class="edu-school">
+                    <i class="fas fa-university"></i>
+                    Sagar Institute of Science, Technology and Research, Bhopal
+                  </div>
+                  <div class="edu-meta">
+                    <span class="edu-badge year">2023 – 2027</span>
+                    <span class="edu-badge score">CGPA: 6.87 / 10</span>
+                    <span class="edu-badge current">Currently 3rd Year</span>
+                  </div>
+                </div>
+
+                <div class="edu-item reveal">
+                  <div class="edu-degree">Class XII — Science (PCM)</div>
+                  <div class="edu-school">
+                    <i class="fas fa-school"></i>
+                    Sardar Patel Inter College, Prayagraj
+                  </div>
+                  <div class="edu-meta">
+                    <span class="edu-badge year">2022</span>
+                    <span class="edu-badge score">67%</span>
+                  </div>
+                </div>
+
+                <div class="edu-item reveal">
+                  <div class="edu-degree">Class X</div>
+                  <div class="edu-school">
+                    <i class="fas fa-school"></i>
+                    Gopal Vidyalaya Inter College, Prayagraj
+                  </div>
+                  <div class="edu-meta">
+                    <span class="edu-badge year">2020</span>
+                    <span class="edu-badge score">73%</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Tab Panel 2: Info & Stats -->
+            <div class="about-tab-panel" id="tab-info">
+              <div class="about-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎓</span>
+                  <div class="highlight-info">
+                    <strong>Education</strong>
+                    <span>B.Tech CSE — CGPA 6.87</span>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">📍</span>
+                  <div class="highlight-info">
+                    <strong>Location</strong>
+                    <span>Bhopal / Prayagraj, India 🇮🇳</span>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">💼</span>
+                  <div class="highlight-info">
+                    <strong>Looking For</strong>
+                    <span>Internship / Entry-Level</span>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🌐</span>
+                  <div class="highlight-info">
+                    <strong>Languages</strong>
+                    <span>English &amp; Hindi</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stats-row">
+                <div class="stat-card">
+                  <div class="stat-num" data-count="10" data-suffix="+">0+</div>
+                  <div class="stat-label">Projects Built</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num" data-count="2" data-suffix="×">0×</div>
+                  <div class="stat-label">National Winner</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num" data-count="3" data-suffix="">0</div>
+                  <div class="stat-label">Cisco Certs</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Panel 3: My Approach -->
+            <div class="about-tab-panel" id="tab-approach">
+              <div class="approach-grid">
+                <div class="approach-item">
+                  <div class="approach-head">
+                    <span class="approach-num">01</span>
+                    <strong>Full-Stack Scalability</strong>
+                  </div>
+                  <p class="approach-desc">Designing modular systems, RESTful APIs, and responsive frontends that perform consistently under high user load.</p>
+                </div>
+                <div class="approach-item">
+                  <div class="approach-head">
+                    <span class="approach-num">02</span>
+                    <strong>AI &amp; ML Integration</strong>
+                  </div>
+                  <p class="approach-desc">Integrating intelligence into applications via Computer Vision (OpenCV), NLP, OCR pipelines, and prediction models.</p>
+                </div>
+                <div class="approach-item">
+                  <div class="approach-head">
+                    <span class="approach-num">03</span>
+                    <strong>Rapid Prototyping</strong>
+                  </div>
+                  <p class="approach-desc">Leveraging rapid feedback loops during hackathons to build functional, polished, and winning software architectures quickly.</p>
+                </div>
+                <div class="approach-item">
+                  <div class="approach-head">
+                    <span class="approach-num">04</span>
+                    <strong>Continuous Adaptation</strong>
+                  </div>
+                  <p class="approach-desc">Deep-diving into new frameworks, algorithms, and core CS concepts to remain competitive and deliver cutting-edge solutions.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="about-actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+            <a href="#contact" class="btn btn-primary" id="about-hire-btn">
+              <i class="fas fa-handshake"></i>
+              Hire Me
+            </a>
+            <a href="assets/Shivam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline" id="about-resume-btn">
+              <i class="fas fa-file-pdf"></i>
+              View Resume
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- ══════════════════════════════════
+       SKILLS
+  ══════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+
+      <div class="skills-header reveal">
+        <div class="section-tag">Expertise</div>
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <span class="section-divider" style="margin:18px auto;"></span>
+        <p class="section-subtitle">Technologies and tools I've worked with across full-stack, mobile, and AI/ML projects.</p>
+      </div>
+
+      <div class="skills-tabs reveal">
+        <button class="skill-tab active" data-cat="all" id="skill-tab-all">All</button>
+        <button class="skill-tab" data-cat="frontend" id="skill-tab-frontend">Frontend</button>
+        <button class="skill-tab" data-cat="backend" id="skill-tab-backend">Backend</button>
+        <button class="skill-tab" data-cat="ml" id="skill-tab-ml">AI / ML</button>
+        <button class="skill-tab" data-cat="tools" id="skill-tab-tools">Tools</button>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="card skill-card reveal" data-cat="frontend">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">⚛️</div>
+              <div><div class="skill-name">React.js</div><div class="skill-category">Frontend</div></div>
+            </div><span class="skill-pct">88%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+        </div>
+
+        <div class="card skill-card reveal" data-cat="frontend">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">📱</div>
+              <div><div class="skill-name">Flutter / React Native</div><div class="skill-category">Mobile</div></div>
+            </div><span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+
+        <div class="card skill-card reveal" data-cat="frontend">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">🌐</div>
+              <div><div class="skill-name">HTML5 / CSS3 / JS</div><div class="skill-category">Frontend</div></div>
+            </div><span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+
+        <div class="card skill-card reveal" data-cat="backend">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">🟢</div>
+              <div><div class="skill-name">Node.js / Express.js</div><div class="skill-category">Backend</div></div>
+            </div><span class="skill-pct">86%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="86"></div></div>
+        </div>
+
+        <div class="card skill-card reveal" data-cat="backend">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">🐍</div>
+              <div><div class="skill-name">Python / Flask</div><div class="skill-category">Backend</div></div>
+            </div><span class="skill-pct">88%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+        </div>
+
+        <div class="card skill-card reveal" data-cat="backend">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">🗄️</div>
+              <div><div class="skill-name">MongoDB / SQL / Firebase</div><div class="skill-category">Database</div></div>
+            </div><span class="skill-pct">82%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+        </div>
+
+        <div class="card skill-card reveal" data-cat="ml">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">🤖</div>
+              <div><div class="skill-name">Deep Learning / NLP</div><div class="skill-category">AI / ML</div></div>
+            </div><span class="skill-pct">78%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+        </div>
+
+        <div class="card skill-card reveal" data-cat="ml">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">👁️</div>
+              <div><div class="skill-name">OpenCV / EasyOCR</div><div class="skill-category">Computer Vision</div></div>
+            </div><span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+        </div>
+
+        <div class="card skill-card reveal" data-cat="tools">
+          <div class="skill-card-top">
+            <div class="skill-info">
+              <div class="skill-icon">🐙</div>
+              <div><div class="skill-name">Git / GitHub</div><div class="skill-category">Version Control</div></div>
+            </div><span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+
+      </div>
+
+      <!-- Language / Core CS tags -->
+      <div class="tech-cloud reveal">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">C / C++</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">Socket.io</span>
+        <span class="tech-tag">REST APIs</span>
+        <span class="tech-tag">JWT Auth</span>
+        <span class="tech-tag">Google Maps API</span>
+        <span class="tech-tag">Pandas / NumPy</span>
+        <span class="tech-tag">Leaflet.js</span>
+        <span class="tech-tag">Provider (Flutter)</span>
+        <span class="tech-tag">DSA</span>
+        <span class="tech-tag">OOP</span>
+        <span class="tech-tag">DBMS</span>
+        <span class="tech-tag">OS Concepts</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       PROJECTS (Bento Grid)
+  ══════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+
+      <div class="projects-header reveal">
+        <div class="section-tag">Portfolio</div>
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <p class="section-subtitle">Real-world solutions I've designed, built, and shipped — from safety apps to AI-powered platforms.</p>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+          <button class="filter-btn" data-filter="mobile" id="filter-mobile">Mobile</button>
+          <button class="filter-btn" data-filter="web" id="filter-web">Web App</button>
+          <button class="filter-btn" data-filter="ml" id="filter-ml">AI / ML</button>
+        </div>
+      </div>
+
+      <div class="projects-console-wrapper">
+        
+        <!-- Left Panel: Project Selector Menu -->
+        <div class="console-nav">
+          <div class="console-nav-item active" data-project="shield-ai" data-category="mobile">
+            <span class="nav-num">01</span>
+            <div class="nav-meta">
+              <h4>SHEild AI</h4>
+              <p>Women Safety Platform</p>
+            </div>
+            <i class="fas fa-chevron-right arrow-icon"></i>
+          </div>
+
+          <div class="console-nav-item" data-project="smart-parking" data-category="web ml">
+            <span class="nav-num">02</span>
+            <div class="nav-meta">
+              <h4>Smart Parking</h4>
+              <p>ANPR Entry Tracker</p>
+            </div>
+            <i class="fas fa-chevron-right arrow-icon"></i>
+          </div>
+
+          <div class="console-nav-item" data-project="sagar-group" data-category="web">
+            <span class="nav-num">03</span>
+            <div class="nav-meta">
+              <h4>Sagar Group</h4>
+              <p>Student Community Hub</p>
+            </div>
+            <i class="fas fa-chevron-right arrow-icon"></i>
+          </div>
+
+          <div class="console-nav-item" data-project="ml-ai" data-category="ml">
+            <span class="nav-num">04</span>
+            <div class="nav-meta">
+              <h4>ML &amp; AI Exploration</h4>
+              <p>Python Neural Pipelines</p>
+            </div>
+            <i class="fas fa-chevron-right arrow-icon"></i>
+          </div>
+        </div>
+
+        <!-- Right Panel: Active Project Details Frame -->
+        <div class="console-display">
+
+          <!-- 1. SHEild AI -->
+          <article class="project-card project-detail-card active" id="project-shield-ai" data-category="mobile" style="--glow-color: rgba(124, 58, 237, 0.12);">
+            <div class="project-hero-glow"></div>
+            <div class="project-detail-content">
+              <div class="project-detail-text">
+                <div class="project-tags">
+                  <span class="project-tag"><i class="fab fa-flutter"></i> Flutter</span>
+                  <span class="project-tag"><i class="fas fa-fire"></i> Firebase</span>
+                  <span class="project-tag"><i class="fas fa-database"></i> MongoDB</span>
+                  <span class="project-tag"><i class="fas fa-map-marked-alt"></i> Google Maps</span>
+                </div>
+                <div class="project-featured-badge"><i class="fas fa-star"></i> Featured Winner</div>
+                <h3 class="project-title">SHEild AI — Women Safety Application</h3>
+                <div class="project-award-banner">
+                  <span class="gold-trophy">🥇</span>
+                  <div>
+                    <strong>1st Place – TIC 2K26 (INR 20,000)</strong>
+                    <span>🥈 National 2nd – BGI Hackathon (INR 12,000)</span>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  An advanced cross-platform women safety application serving 200+ test users. Implements voice-triggered emergency SOS activations, real-time precise GPS location sharing, and direct Firebase-backed instant alerts.
+                </p>
+                <ul class="project-features">
+                  <li><i class="fas fa-check-circle"></i> Voice-triggered activation &amp; SOS alerts</li>
+                  <li><i class="fas fa-check-circle"></i> Real-time location tracking &amp; history</li>
+                  <li><i class="fas fa-check-circle"></i> Direct database integration for emergency contacts</li>
+                </ul>
+                <div class="project-footer">
+                  <div class="project-links">
+                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-shield">
+                      <i class="fab fa-github"></i> GitHub Code
+                    </a>
+                  </div>
+                  <span class="project-year">2025–26</span>
+                </div>
+              </div>
+              <div class="project-detail-media">
+                <div class="project-img-wrap">
+                  <img src="assets/projects/project2.png" alt="SHEild AI – Women Safety Application" loading="lazy" />
+                  <div class="project-overlay">
+                    <button class="overlay-btn view-btn" data-lightbox="assets/projects/project2.png" id="lightbox-shield">
+                      <i class="fas fa-eye"></i> Full Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Smart Parking -->
+          <article class="project-card project-detail-card" id="project-smart-parking" data-category="web ml" style="--glow-color: rgba(8, 145, 178, 0.08);">
+            <div class="project-glow"></div>
+            <div class="project-detail-content">
+              <div class="project-detail-text">
+                <div class="project-tags">
+                  <span class="project-tag"><i class="fab fa-python"></i> Python / Flask</span>
+                  <span class="project-tag"><i class="fas fa-eye"></i> OpenCV</span>
+                  <span class="project-tag"><i class="fas fa-keyboard"></i> EasyOCR</span>
+                  <span class="project-tag"><i class="fab fa-react"></i> React Native</span>
+                </div>
+                <h3 class="project-title">Smart Parking System with ANPR</h3>
+                <p class="project-desc">
+                  Automated vehicle entry/exit tracking using OpenCV &amp; EasyOCR. Features a custom OCR correction pipeline using Levenshtein Distance &amp; Bigram Lang Model, boosting plate recognition by 35%. Real-time status dashboard built with Leaflet.js.
+                </p>
+                <ul class="project-features">
+                  <li><i class="fas fa-check-circle"></i> ANPR vehicle entry/exit registration</li>
+                  <li><i class="fas fa-check-circle"></i> Levenshtein OCR correction pipeline</li>
+                  <li><i class="fas fa-check-circle"></i> Real-time status map (Leaflet.js)</li>
+                </ul>
+                <div class="project-footer">
+                  <div class="project-links">
+                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-parking">
+                      <i class="fab fa-github"></i> GitHub Code
+                    </a>
+                  </div>
+                  <span class="project-year">2024–25</span>
+                </div>
+              </div>
+              <div class="project-detail-media">
+                <div class="project-img-wrap">
+                  <img src="assets/projects/project1.png" alt="Smart Parking System with ANPR" loading="lazy" />
+                  <div class="project-overlay">
+                    <button class="overlay-btn view-btn" data-lightbox="assets/projects/project1.png" id="lightbox-parking">
+                      <i class="fas fa-eye"></i> Full Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Sagar Group -->
+          <article class="project-card project-detail-card" id="project-sagar-group" data-category="web" style="--glow-color: rgba(79, 70, 229, 0.08);">
+            <div class="project-glow"></div>
+            <div class="project-detail-content">
+              <div class="project-detail-text">
+                <div class="project-tags">
+                  <span class="project-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                  <span class="project-tag"><i class="fas fa-server"></i> Express.js</span>
+                  <span class="project-tag"><i class="fas fa-leaf"></i> MongoDB</span>
+                  <span class="project-tag"><i class="fas fa-plug"></i> Socket.io</span>
+                </div>
+                <h3 class="project-title">Sagar Group — Community Platform</h3>
+                <p class="project-desc">
+                  A comprehensive social learning platform serving 500+ active students. Integrates JWT session security, real-time messaging, and live global event announcements powered by Socket.io, reducing unnecessary HTTP polling by 80%.
+                </p>
+                <ul class="project-features">
+                  <li><i class="fas fa-check-circle"></i> WebSocket channels &amp; student chats</li>
+                  <li><i class="fas fa-check-circle"></i> Secure JWT authentication &amp; auth sessions</li>
+                  <li><i class="fas fa-check-circle"></i> Integrated course catalog database</li>
+                </ul>
+                <div class="project-footer">
+                  <div class="project-links">
+                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-sagar">
+                      <i class="fab fa-github"></i> GitHub Code
+                    </a>
+                  </div>
+                  <span class="project-year">2024</span>
+                </div>
+              </div>
+              <div class="project-detail-media">
+                <div class="project-img-wrap">
+                  <img src="assets/projects/project3.png" alt="Sagar Group Educational Platform" loading="lazy" />
+                  <div class="project-overlay">
+                    <button class="overlay-btn view-btn" data-lightbox="assets/projects/project3.png" id="lightbox-sagar">
+                      <i class="fas fa-eye"></i> Full Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. ML & AI Exploration -->
+          <article class="project-card project-detail-card project-detail-card-terminal" id="project-ml-ai" data-category="ml" style="--glow-color: rgba(16, 185, 129, 0.08);">
+            <div class="terminal-glow"></div>
+            <div class="project-detail-content">
+              <div class="project-detail-text">
+                <div class="project-tags">
+                  <span class="project-tag"><i class="fab fa-python"></i> Python</span>
+                  <span class="project-tag"><i class="fas fa-brain"></i> Deep Learning</span>
+                  <span class="project-tag"><i class="fas fa-comments"></i> NLP</span>
+                </div>
+                <h3 class="project-title">ML &amp; AI Exploration Projects</h3>
+                <p class="project-desc">
+                  A curated collection of neural network training experiments, tokenization workflows, text processing models, and custom image classifications engineered on structured datasets.
+                </p>
+                <ul class="project-features">
+                  <li><i class="fas fa-check-circle"></i> Model pipelines in TensorFlow &amp; PyTorch</li>
+                  <li><i class="fas fa-check-circle"></i> Natural Language Processing evaluations</li>
+                  <li><i class="fas fa-check-circle"></i> Supervised and unsupervised datasets</li>
+                </ul>
+                <div class="project-footer">
+                  <div class="project-links">
+                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-ml">
+                      <i class="fab fa-github"></i> GitHub Pipeline
+                    </a>
+                  </div>
+                  <span class="project-year">2024–25</span>
+                </div>
+              </div>
+              <div class="project-detail-media">
+                <div class="project-terminal-container">
+                  <div class="terminal-header">
+                    <div class="terminal-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+                    <div class="terminal-title">ml_pipeline.py</div>
+                  </div>
+                  <div class="terminal-body">
+                    <pre><code><span class="code-comment"># AI/ML Exploration Pipeline</span>
+<span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd
+<span class="code-keyword">import</span> numpy <span class="code-keyword">as</span> np
+
+model = DeepLearningPipeline(
+  task=<span class="code-string">"NLP_Sentiment_Analysis"</span>,
+  framework=<span class="code-string">"TensorFlow/PyTorch"</span>,
+  datasets=[<span class="code-string">"supervised"</span>, <span class="code-string">"unsupervised"</span>]
+)
+model.fit(epochs=<span class="code-number">100</span>)
+<span class="code-keyword">print</span>(model.evaluate(metric=<span class="code-string">"accuracy"</span>))
+<span class="code-comment"># Output: Validation Accuracy = 94.6%</span></code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="" alt="Project preview" id="lightbox-img" />
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════
+       ACHIEVEMENTS
+  ══════════════════════════════════ -->
+  <section id="achievements">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="section-tag">Recognition</div>
+        <h2 class="section-title">Awards &amp; <span>Achievements</span></h2>
+        <span class="section-divider"></span>
+        <p class="section-subtitle">Recognitions earned through competitive hackathons and academic excellence.</p>
+      </div>
+
+      <div class="achievements-grid two-cols">
+
+        <!-- TIC 2K26 Gold Win -->
+        <div class="card hackathon-card gold-win reveal">
+          <div class="hackathon-glow"></div>
+          <div class="hackathon-badge"><i class="fas fa-trophy"></i> 1st Place Winner</div>
+          
+          <div class="hackathon-header">
+            <span class="hackathon-icon">🥇</span>
+            <div class="hackathon-meta">
+              <span class="hackathon-date">Feb 2026</span>
+              <h3 class="hackathon-title">TIC 2K26 Hackathon</h3>
+              <span class="hackathon-event">Techno International Batanagar</span>
+            </div>
+          </div>
+
+          <p class="hackathon-desc">
+            Led team <strong>NEXUS</strong> to secure 1st Place out of 200+ competing teams. Designed and developed <strong>SHEild AI</strong>, a voice-activated women's safety platform built in 36 hours.
+          </p>
+
+          <div class="hackathon-stats">
+            <div class="stat-badge"><i class="fas fa-users"></i> Team NEXUS</div>
+            <div class="stat-badge"><i class="fas fa-laptop-code"></i> 36h Hack</div>
+            <div class="stat-badge"><i class="fas fa-globe"></i> National</div>
+          </div>
+
+          <div class="hackathon-footer">
+            <span class="prize-tag"><i class="fas fa-gift"></i> INR 20,000 Prize</span>
+            <a href="#projects" class="view-project-link" data-project="shield-ai">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- BGI Hackathon 2026 Silver Win -->
+        <div class="card hackathon-card silver-win reveal">
+          <div class="hackathon-glow"></div>
+          <div class="hackathon-badge"><i class="fas fa-award"></i> National Runner-Up</div>
+          
+          <div class="hackathon-header">
+            <span class="hackathon-icon">🥈</span>
+            <div class="hackathon-meta">
+              <span class="hackathon-date">Mar 2026</span>
+              <h3 class="hackathon-title">BGI Hackathon 2026</h3>
+              <span class="hackathon-event">Bansal Group of Institutes</span>
+            </div>
+          </div>
+
+          <p class="hackathon-desc">
+            Placed 2nd overall out of 600+ teams and 2,800+ participants nationwide. Pitched <strong>SHEild AI</strong> under rigorous engineering and design evaluation criteria.
+          </p>
+
+          <div class="hackathon-stats">
+            <div class="stat-badge"><i class="fas fa-users-cog"></i> 600+ Teams</div>
+            <div class="stat-badge"><i class="fas fa-user-friends"></i> 2,800+ Devs</div>
+            <div class="stat-badge"><i class="fas fa-globe"></i> National</div>
+          </div>
+
+          <div class="hackathon-footer">
+            <span class="prize-tag"><i class="fas fa-gift"></i> INR 12,000 Prize</span>
+            <a href="#projects" class="view-project-link" data-project="shield-ai">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       CERTIFICATIONS
+  ══════════════════════════════════ -->
+  <section id="certifications">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-tag">Credentials</div>
+        <h2 class="section-title">Certifi&shy;<span>cations</span></h2>
+        <span class="section-divider"></span>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="card cert-card reveal">
+          <div class="cert-icon">🔐</div>
+          <div class="cert-info">
+            <div class="cert-name">Introduction to Cybersecurity</div>
+            <div class="cert-issuer">Cisco Networking Academy</div>
+          </div>
+        </div>
+
+        <div class="card cert-card reveal">
+          <div class="cert-icon">🐍</div>
+          <div class="cert-info">
+            <div class="cert-name">Python Essentials 1</div>
+            <div class="cert-issuer">Cisco Networking Academy</div>
+          </div>
+        </div>
+
+        <div class="card cert-card reveal">
+          <div class="cert-icon">🐍</div>
+          <div class="cert-info">
+            <div class="cert-name">Python Essentials 2</div>
+            <div class="cert-issuer">Cisco Networking Academy</div>
+          </div>
+        </div>
+
+        <div class="card cert-card reveal">
+          <div class="cert-icon">☁️</div>
+          <div class="cert-info">
+            <div class="cert-name">Cloud Computing &amp; Distributed Systems (Elite)</div>
+            <div class="cert-issuer">NPTEL — IIT Kanpur</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       CONTACT
+  ══════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+
+        <!-- Left -->
+        <div class="contact-info reveal-left">
+          <div class="contact-intro">
+            <div class="section-tag">Get In Touch</div>
+            <h2 class="section-title">Let's <span>Connect</span></h2>
+            <p class="contact-intro-text">
+              I'm actively looking for internship opportunities or entry-level roles in backend development or ML engineering.
+              If you have a project, opening, or just want to say hi — I'd love to hear from you!
+            </p>
+          </div>
+
+          <div class="contact-details">
+            <a href="mailto:mauryashivamkumar841@gmail.com" class="contact-item" id="contact-email-link">
+              <div class="contact-item-icon">📧</div>
+              <div class="contact-item-info">
+                <strong>Email</strong>
+                <span>mauryashivamkumar841@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+917235986871" class="contact-item" id="contact-phone-link">
+              <div class="contact-item-icon">📱</div>
+              <div class="contact-item-info">
+                <strong>Phone</strong>
+                <span>+91 72359 86871</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-info">
+                <strong>Location</strong>
+                <span>Bhopal / Prayagraj, India 🇮🇳</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <h4>Find me on</h4>
+            <div class="social-links-row">
+              <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-pill" id="contact-github">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener" class="social-pill" id="contact-linkedin">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form-wrap reveal-right">
+          <div class="form-title">Send a <span>Message</span> ✉️</div>
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group float-label">
+                <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
+                <label for="name">Your Name *</label>
+              </div>
+              <div class="form-group float-label">
+                <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required />
+                <label for="email">Email Address *</label>
+              </div>
+              <div class="form-group float-label full">
+                <input type="text" id="subject" name="subject" placeholder=" " />
+                <label for="subject">Subject</label>
+              </div>
+              <div class="form-group float-label full">
+                <textarea id="message" name="message" placeholder=" " required></textarea>
+                <label for="message">Message *</label>
+              </div>
+            </div>
+            <button type="submit" class="form-submit" id="form-submit">
+              <span>Send Message</span>
+              <span>→</span>
+            </button>
+            <p class="form-msg" id="form-msg" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">SKM.</div>
+        <p class="footer-copy">
+          © 2025 Shivam Kumar Maurya. Made with <span>♥</span> in India
+        </p>
+        <div class="footer-socials">
+          <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-link" id="footer-github" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener" class="social-link" id="footer-linkedin" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:mauryashivamkumar841@gmail.com" class="social-link" id="footer-email" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- PAGE WIPE TRANSITION -->
+  <div id="page-wipe">
+    <div class="wipe-panel wipe-panel-1"></div>
+    <div class="wipe-panel wipe-panel-2"></div>
+    <div class="wipe-logo">SKM.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
