@@ -2891,7 +2891,7 @@ section {
 
 .deck-card-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 0.95fr 1.25fr;
   gap: 32px;
   align-items: center;
 }
@@ -3258,10 +3258,18 @@ section {
 
 .mockup-screen img {
   width: 100%;
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/10.5;
+  min-height: 380px;
   object-fit: cover;
+  object-position: top center;
   display: block;
   transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+@media (min-width: 1200px) {
+  .mockup-screen img {
+    min-height: 420px;
+  }
 }
 
 .deck-device-mockup:hover .mockup-screen img {
@@ -3653,7 +3661,9 @@ section {
 .bento-hero-media img {
   width: 100%;
   aspect-ratio: 16/10;
+  min-height: 250px;
   object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
@@ -3668,7 +3678,9 @@ section {
 .bento-media-wrap img {
   width: 100%;
   aspect-ratio: 16/10;
+  min-height: 230px;
   object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
