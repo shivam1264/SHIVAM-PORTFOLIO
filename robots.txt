@@ -1,0 +1,12 @@
+# https://www.robotstxt.org/robotstxt.html
+# Robots.txt for Shivam Kumar Maurya's Portfolio Website
+
+User-agent: *
+Allow: /
+
+# Disallow non-public script files
+Disallow: /copy-images.bat
+Disallow: /setup-images.js
+
+# Sitemap location
+Sitemap: https://shivam1264.github.io/sitemap.xml

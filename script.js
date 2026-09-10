@@ -4,35 +4,96 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── THEME SWITCHER (DARK/LIGHT MODE) ──────────
-  const themeToggle = document.getElementById('theme-toggle');
-  const currentTheme = localStorage.getItem('theme') || 'light';
+  // ── THEME (Industrial Skeuomorphism is strictly light mode) ──
+  // Always enforce light mode; clear any stored dark preference.
+  document.documentElement.removeAttribute('data-theme');
+  localStorage.setItem('theme', 'light');
+  // ── WELCOME INTRO SCREEN ──
+  const welcomeScreen = document.getElementById('page-loader');
+  const welcomeBarFill = document.getElementById('welcome-bar-fill');
+  const welcomePct = document.getElementById('welcome-pct');
+  const welcomeStatusLabel = document.getElementById('welcome-status-label');
+  const welcomeEnterBtn = document.getElementById('welcome-enter-btn');
+  const welcomeCountdown = document.getElementById('welcome-countdown');
 
-  // Apply default theme
-  if (currentTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
+  let introDismissed = false;
+  let autoDismissTimer = null;
+  let countdownTimer = null;
+
+  function dismissIntro() {
+    if (introDismissed || !welcomeScreen) return;
+    introDismissed = true;
+    if (autoDismissTimer) clearTimeout(autoDismissTimer);
+    if (countdownTimer) clearInterval(countdownTimer);
+    welcomeScreen.classList.add('hidden');
+    document.body.style.overflow = '';
   }
 
-  themeToggle.addEventListener('click', () => {
-    let theme = 'light';
-    if (document.documentElement.getAttribute('data-theme') !== 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      theme = 'dark';
-    } else {
-      document.documentElement.removeAttribute('data-theme');
+  if (welcomeScreen && !welcomeScreen.classList.contains('hidden')) {
+    document.body.style.overflow = 'hidden';
+
+    // 1. Click on button to enter
+    if (welcomeEnterBtn) {
+      welcomeEnterBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dismissIntro();
+      });
     }
-    localStorage.setItem('theme', theme);
-  });
-  const loader = document.getElementById('page-loader');
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader.classList.add('hidden');
-    }, 1600); // matches bar fill animation
-  });
-  // Fallback if load event already fired
-  if (document.readyState === 'complete') {
-    setTimeout(() => loader.classList.add('hidden'), 1600);
+
+    // 2. Click / Tap anywhere on the screen or card to enter
+    welcomeScreen.addEventListener('click', dismissIntro);
+
+    // 3. Press any key (Enter, Space, Escape) to enter
+    document.addEventListener('keydown', (e) => {
+      if (!introDismissed && (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape')) {
+        dismissIntro();
+      }
+    });
+
+    // 4. 12 Seconds countdown & auto-dismiss
+    let secondsRemaining = 12;
+    countdownTimer = setInterval(() => {
+      secondsRemaining--;
+      if (welcomeCountdown) {
+        welcomeCountdown.textContent = secondsRemaining + 's';
+      }
+      if (secondsRemaining <= 0) {
+        clearInterval(countdownTimer);
+        dismissIntro();
+      }
+    }, 1000);
+
+    autoDismissTimer = setTimeout(() => {
+      dismissIntro();
+    }, 12000);
   }
+
+  // Initial setup progress animation (quick ~1.2s fill to 100% Ready)
+  let introProgress = 0;
+  const statusSteps = [
+    { at: 0, text: 'Setting up environment...' },
+    { at: 35, text: 'Loading projects & achievements...' },
+    { at: 75, text: 'Preparing interactive systems...' },
+    { at: 100, text: 'Ready! Welcome to my portfolio.' }
+  ];
+
+  const introProgressTimer = setInterval(() => {
+    introProgress += 10;
+    if (introProgress >= 100) {
+      introProgress = 100;
+      clearInterval(introProgressTimer);
+      if (welcomeBarFill) welcomeBarFill.style.width = '100%';
+      if (welcomePct) welcomePct.textContent = '100%';
+      if (welcomeStatusLabel) welcomeStatusLabel.textContent = 'Ready! Welcome to my portfolio.';
+    } else {
+      if (welcomeBarFill) welcomeBarFill.style.width = introProgress + '%';
+      if (welcomePct) welcomePct.textContent = introProgress + '%';
+      const step = statusSteps.slice().reverse().find(s => introProgress >= s.at);
+      if (step && welcomeStatusLabel) {
+        welcomeStatusLabel.textContent = step.text;
+      }
+    }
+  }, 100);
 
   // ── 1. NAVBAR SCROLL EFFECT & PROGRESS BAR ───
   const navbar = document.getElementById('navbar');
@@ -70,21 +131,59 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── 2. MOBILE MENU ───────────────────────────
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-  const mobileLinks = mobileMenu.querySelectorAll('a');
+  const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+  const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-  });
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
+  function closeMobileNav() {
+    if (hamburger) hamburger.classList.remove('open');
+    if (mobileMenu) {
       mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
+      mobileMenu.classList.remove('active');
+    }
+    if (mobileBackdrop) {
+      mobileBackdrop.classList.remove('open');
+      mobileBackdrop.classList.remove('active');
+    }
+    document.body.style.overflow = '';
+  }
+
+  function openMobileNav() {
+    if (hamburger) hamburger.classList.add('open');
+    if (mobileMenu) {
+      mobileMenu.classList.add('open');
+      mobileMenu.classList.add('active');
+    }
+    if (mobileBackdrop) {
+      mobileBackdrop.classList.add('open');
+      mobileBackdrop.classList.add('active');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileMenu.classList.contains('open') || mobileMenu.classList.contains('active')) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
     });
-  });
+
+    if (mobileBackdrop) {
+      mobileBackdrop.addEventListener('click', closeMobileNav);
+    }
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && (mobileMenu.classList.contains('open') || mobileMenu.classList.contains('active'))) {
+        closeMobileNav();
+      }
+    });
+  }
 
 
   // ── 3. TYPEWRITER EFFECT ─────────────────────
@@ -165,18 +264,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const siblings = Array.from(entry.target.parentElement.children);
         const index = siblings.indexOf(entry.target);
         entry.target.style.transitionDelay = `${index * 0.1}s`;
-        entry.target.classList.add('revealed');
+        entry.target.classList.add('visible');
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px 0px 0px' });
 
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-about-img, .reveal-about-text').forEach(el => {
     // Don't override explicit delay classes from HTML
     const hasExplicitDelay = el.classList.contains('delay-1') ||
-                             el.classList.contains('delay-2') ||
-                             el.classList.contains('delay-3') ||
-                             el.classList.contains('delay-4');
+      el.classList.contains('delay-2') ||
+      el.classList.contains('delay-3') ||
+      el.classList.contains('delay-4');
     revealObserver.observe(el);
     if (hasExplicitDelay) el.style.transitionDelay = ''; // let CSS handle it
   });
@@ -242,57 +341,145 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach(c => counterObserver.observe(c));
 
 
-  // ── 8. PROJECT CONSOLE SELECTORS & FILTER ────────────────────────
-  const consoleItems = document.querySelectorAll('.console-nav-item');
-  const projectCards = document.querySelectorAll('.project-detail-card');
+  // ── 8. NEXT-GEN PROJECT STUDIO DECK & BENTO CONTROLLER ─────────
+  const dockTabs = document.querySelectorAll('.deck-dock-tab');
+  const deckCards = document.querySelectorAll('.deck-project-card');
+  const bentoCards = document.querySelectorAll('.bento-card');
   const filterBtns = document.querySelectorAll('.filter-btn');
+  const viewModeBtns = document.querySelectorAll('.view-mode-btn');
+  const deckView = document.getElementById('projects-deck-view');
+  const bentoView = document.getElementById('projects-bento-view');
+  const counterDisplay = document.getElementById('deck-counter-display');
+  const stepDots = document.querySelectorAll('.deck-step-dots .dot');
+  const prevBtn = document.getElementById('deck-prev-btn');
+  const nextBtn = document.getElementById('deck-next-btn');
 
-  // Handle click on selector nav items
-  consoleItems.forEach(item => {
-    item.addEventListener('click', () => {
-      // Remove active classes
-      consoleItems.forEach(i => i.classList.remove('active'));
-      projectCards.forEach(c => c.classList.remove('active'));
+  let currentProjectIndex = 0;
 
-      // Activate clicked item and corresponding card
-      item.classList.add('active');
-      const targetId = item.dataset.project;
-      const targetCard = document.getElementById(`project-${targetId}`);
-      if (targetCard) {
-        targetCard.classList.add('active');
-        
-        // Reset animations on toggle
-        targetCard.style.animation = 'none';
-        targetCard.offsetHeight; // reflow
-        targetCard.style.animation = '';
+  function switchProject(index) {
+    const visibleTabs = Array.from(dockTabs).filter(t => !t.classList.contains('hidden'));
+    if (!visibleTabs.length) return;
+
+    if (index < 0) index = visibleTabs.length - 1;
+    if (index >= visibleTabs.length) index = 0;
+
+    currentProjectIndex = index;
+    const targetTab = visibleTabs[index];
+    const targetProjectId = targetTab.dataset.project;
+
+    // Update dock tabs
+    dockTabs.forEach(t => t.classList.remove('active'));
+    targetTab.classList.add('active');
+
+    // Update active card
+    deckCards.forEach(c => c.classList.remove('active'));
+    const targetCard = document.getElementById(`deck-${targetProjectId}`);
+    if (targetCard) {
+      targetCard.classList.add('active');
+    }
+
+    // Update counter and dots
+    const actualIndex = Array.from(dockTabs).indexOf(targetTab);
+    if (counterDisplay) {
+      counterDisplay.textContent = `0${actualIndex + 1} / 04`;
+    }
+
+    stepDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === actualIndex);
+    });
+  }
+
+  // Dock tab clicks
+  dockTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const visibleTabs = Array.from(dockTabs).filter(t => !t.classList.contains('hidden'));
+      const idx = visibleTabs.indexOf(tab);
+      if (idx !== -1) {
+        switchProject(idx);
       }
     });
   });
 
-  // Handle filter clicks
+  // Prev / Next buttons
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => switchProject(currentProjectIndex - 1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => switchProject(currentProjectIndex + 1));
+  }
+
+  // Keyboard navigation when user is near projects section
+  document.addEventListener('keydown', (e) => {
+    const projectsSection = document.getElementById('projects');
+    if (!projectsSection) return;
+    const rect = projectsSection.getBoundingClientRect();
+    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isInView && deckView && deckView.style.display !== 'none') {
+      if (e.key === 'ArrowLeft') {
+        switchProject(currentProjectIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        switchProject(currentProjectIndex + 1);
+      }
+    }
+  });
+
+  // Category Filter clicks (filters both Studio Deck and Bento Grid)
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.dataset.filter;
-      let firstVisible = null;
 
-      consoleItems.forEach(item => {
-        const itemCats = item.dataset.category.split(' ');
-        if (filter === 'all' || itemCats.includes(filter)) {
-          item.classList.remove('hidden');
-          if (!firstVisible) {
-            firstVisible = item;
-          }
+      // Filter Deck Tabs
+      let firstVisibleIdx = -1;
+      dockTabs.forEach((tab, i) => {
+        const cats = (tab.dataset.category || '').split(' ');
+        if (filter === 'all' || cats.includes(filter)) {
+          tab.classList.remove('hidden');
+          if (firstVisibleIdx === -1) firstVisibleIdx = i;
         } else {
-          item.classList.add('hidden');
+          tab.classList.add('hidden');
         }
       });
 
-      // Automatically select the first visible project in the filtered list
-      if (firstVisible) {
-        firstVisible.click();
+      // Filter Bento Cards
+      bentoCards.forEach(card => {
+        const cats = (card.dataset.category || '').split(' ');
+        if (filter === 'all' || cats.includes(filter)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Select first visible tab in deck
+      if (firstVisibleIdx !== -1) {
+        const visibleTabs = Array.from(dockTabs).filter(t => !t.classList.contains('hidden'));
+        switchProject(0);
+      }
+    });
+  });
+
+  // View Mode Switcher (Studio Deck vs Bento Grid)
+  viewModeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      viewModeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const mode = btn.dataset.mode;
+      if (mode === 'bento') {
+        if (deckView) deckView.style.display = 'none';
+        if (bentoView) {
+          bentoView.style.display = 'block';
+          bentoView.style.animation = 'deck-fade-in 0.4s ease forwards';
+        }
+      } else {
+        if (bentoView) bentoView.style.display = 'none';
+        if (deckView) {
+          deckView.style.display = 'block';
+          deckView.style.animation = 'deck-fade-in 0.4s ease forwards';
+        }
       }
     });
   });
@@ -304,16 +491,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxClose = document.getElementById('lightbox-close');
 
   document.querySelectorAll('[data-lightbox]').forEach(el => {
-    el.addEventListener('click', () => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
       const src = el.dataset.lightbox;
-      lightboxImg.src = src;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      if (src && lightboxImg) {
+        lightboxImg.src = src;
+        lightbox.classList.add('open');
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
     });
   });
 
   function closeLightbox() {
-    lightbox.classList.remove('active');
+    if (lightbox) {
+      lightbox.classList.remove('open');
+      lightbox.classList.remove('active');
+    }
     document.body.style.overflow = '';
   }
 
@@ -327,51 +521,89 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ── 10. CONTACT FORM ─────────────────────────
+  // ── 10. REAL CONTACT FORM ─────────────────────────
   const contactForm = document.getElementById('contact-form');
   const formMsg = document.getElementById('form-msg');
   const formSubmit = document.getElementById('form-submit');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const subjectInput = document.getElementById('subject');
+      const messageInput = document.getElementById('message');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const subject = (subjectInput && subjectInput.value.trim()) ? subjectInput.value.trim() : 'New Portfolio Inquiry';
+      const message = messageInput ? messageInput.value.trim() : '';
 
       // Basic validation
       if (!name || !email || !message) {
-        formMsg.textContent = '⚠️ Please fill in all required fields.';
+        formMsg.innerHTML = '<i class="fas fa-circle-exclamation"></i> Please fill in all required fields.';
         formMsg.className = 'form-msg error';
         return;
       }
 
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        formMsg.textContent = '⚠️ Please enter a valid email address.';
+        formMsg.innerHTML = '<i class="fas fa-circle-exclamation"></i> Please enter a valid email address.';
         formMsg.className = 'form-msg error';
         return;
       }
 
-      // Simulate sending
-      formSubmit.textContent = 'Sending...';
+      const originalBtnHtml = formSubmit.innerHTML;
+      formSubmit.innerHTML = '<span>Sending... <i class="fas fa-spinner fa-spin"></i></span>';
       formSubmit.disabled = true;
 
-      setTimeout(() => {
-        formSubmit.innerHTML = '✅ Message Sent!';
-        formSubmit.classList.add('success');
-        formMsg.textContent = 'Thank you! I\'ll get back to you within 24 hours.';
-        formMsg.className = 'form-msg success';
-        contactForm.reset();
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/mauryashivamkumar841@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            subject: `Portfolio: ${subject}`,
+            message: message,
+            _subject: `Portfolio Message from ${name}: ${subject}`,
+            _template: "table"
+          })
+        });
 
-        setTimeout(() => {
-          formSubmit.innerHTML = '<span>Send Message</span> <span>→</span>';
-          formSubmit.classList.remove('success');
-          formSubmit.disabled = false;
-          formMsg.textContent = '';
-          formMsg.className = 'form-msg';
-        }, 4000);
-      }, 1600);
+        const result = await response.json();
+
+        if (response.ok || result.success === "true" || result.success === true) {
+          formSubmit.innerHTML = '<span><i class="fas fa-circle-check"></i> Message Sent!</span>';
+          formSubmit.classList.add('success');
+          formMsg.innerHTML = '<i class="fas fa-paper-plane"></i> Thank you! Your message has been dispatched to Shivam\'s inbox.';
+          formMsg.className = 'form-msg success';
+          contactForm.reset();
+
+          setTimeout(() => {
+            formSubmit.innerHTML = originalBtnHtml;
+            formSubmit.classList.remove('success');
+            formSubmit.disabled = false;
+          }, 4000);
+        } else {
+          throw new Error(result.message || 'Error sending message');
+        }
+      } catch (error) {
+        console.warn('Form endpoint notice:', error);
+        // Instant Fallback to mailto so no message is lost
+        const mailtoUrl = `mailto:mauryashivamkumar841@gmail.com?subject=${encodeURIComponent(subject + " (from " + name + ")")}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message)}`;
+        formSubmit.innerHTML = '<span>Click to Send via Email</span> <i class="fas fa-paper-plane"></i>';
+        formSubmit.disabled = false;
+        formMsg.innerHTML = `<i class="fas fa-circle-info"></i> Direct delivery: <a href="${mailtoUrl}" target="_blank" style="color:var(--accent);text-decoration:underline;font-weight:700;">Click here to send directly to Shivam via your email app</a>.`;
+        formMsg.className = 'form-msg error';
+
+        formSubmit.onclick = () => {
+          window.location.href = mailtoUrl;
+        };
+      }
     });
   }
 
@@ -389,7 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ── 11b. 3D CARD TILT on project cards ──────────
-  document.querySelectorAll('.project-card').forEach(card => {
+  document.querySelectorAll('.deck-device-mockup, .bento-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -399,7 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const rotateX = ((y - cy) / cy) * -6;
       const rotateY = ((x - cx) / cx) * 6;
       card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-      
+
       // Update mouse position custom CSS properties for cursor glow tracking
       card.style.setProperty('--x', `${x}px`);
       card.style.setProperty('--y', `${y}px`);
@@ -416,15 +648,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── 11c. BUTTON RIPPLE ───────────────────────────
   document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.addEventListener('click', function (e) {
       const ripple = document.createElement('span');
       const rect = this.getBoundingClientRect();
       const size = Math.max(rect.width, rect.height);
       ripple.style.cssText = `
         position:absolute; border-radius:50%; pointer-events:none;
         width:${size}px; height:${size}px;
-        left:${e.clientX - rect.left - size/2}px;
-        top:${e.clientY - rect.top - size/2}px;
+        left:${e.clientX - rect.left - size / 2}px;
+        top:${e.clientY - rect.top - size / 2}px;
         background:rgba(255,255,255,0.35);
         transform:scale(0); animation:ripple-out 0.6s ease-out forwards;
       `;
@@ -451,12 +683,12 @@ document.addEventListener('DOMContentLoaded', () => {
   skillTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       if (tab.classList.contains('active')) return;
-      
+
       skillTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
       const cat = tab.dataset.cat;
-      
+
       // Step 1: Fade out all cards
       skillCards.forEach(card => {
         card.style.opacity = '0';
@@ -470,11 +702,11 @@ document.addEventListener('DOMContentLoaded', () => {
           const matches = (cat === 'all' || card.dataset.cat === cat);
           if (matches) {
             card.style.display = '';
-            
+
             // Set transitions delays for staggered entry
             card.style.transitionDelay = `${visibleIndex * 0.05}s`;
             visibleIndex++;
-            
+
             // Request animation frame to ensure display is applied before animating
             requestAnimationFrame(() => {
               card.style.opacity = '1';
@@ -489,39 +721,151 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ── 12b. MOBILE SKILLS CONTROLLER (SWIPE DECK & COMPACT GRID) ──
+  const skillsGrid = document.getElementById('skills-grid');
+  const skillsViewSlider = document.getElementById('skills-view-slider');
+  const skillsViewGrid = document.getElementById('skills-view-grid');
+  const skillsPrevBtn = document.getElementById('skills-prev-btn');
+  const skillsNextBtn = document.getElementById('skills-next-btn');
+  const skillsCounter = document.getElementById('skills-counter');
+  const skillsDots = document.getElementById('skills-dots');
+
+  if (skillsGrid) {
+    function getVisibleCards() {
+      return Array.from(skillsGrid.querySelectorAll('.skill-card')).filter(c => c.style.display !== 'none');
+    }
+
+    function updateSliderIndicators() {
+      if (!skillsCounter || !skillsDots) return;
+      const visible = getVisibleCards();
+      const total = visible.length;
+      if (total === 0) return;
+
+      const gridRect = skillsGrid.getBoundingClientRect();
+      const gridCenter = gridRect.left + gridRect.width / 2;
+
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      visible.forEach((card, idx) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const dist = Math.abs(cardCenter - gridCenter);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIndex = idx;
+        }
+      });
+
+      skillsCounter.textContent = `${closestIndex + 1} / ${total}`;
+
+      const dots = skillsDots.querySelectorAll('.slider-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === closestIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function buildSliderDots() {
+      if (!skillsDots) return;
+      skillsDots.innerHTML = '';
+      const visible = getVisibleCards();
+      visible.forEach((_, idx) => {
+        const dot = document.createElement('span');
+        dot.className = `slider-dot ${idx === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => {
+          visible[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        });
+        skillsDots.appendChild(dot);
+      });
+      updateSliderIndicators();
+    }
+
+    let isScrollingTimer;
+    skillsGrid.addEventListener('scroll', () => {
+      clearTimeout(isScrollingTimer);
+      isScrollingTimer = setTimeout(updateSliderIndicators, 40);
+    }, { passive: true });
+
+    if (skillsPrevBtn) {
+      skillsPrevBtn.addEventListener('click', () => {
+        const visible = getVisibleCards();
+        const cardWidth = visible[0] ? visible[0].offsetWidth + 14 : 280;
+        skillsGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      });
+    }
+
+    if (skillsNextBtn) {
+      skillsNextBtn.addEventListener('click', () => {
+        const visible = getVisibleCards();
+        const cardWidth = visible[0] ? visible[0].offsetWidth + 14 : 280;
+        skillsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      });
+    }
+
+    if (skillsViewSlider && skillsViewGrid) {
+      skillsViewSlider.addEventListener('click', () => {
+        skillsViewSlider.classList.add('active');
+        skillsViewGrid.classList.remove('active');
+        skillsGrid.classList.remove('grid-mode');
+        buildSliderDots();
+      });
+
+      skillsViewGrid.addEventListener('click', () => {
+        skillsViewGrid.classList.add('active');
+        skillsViewSlider.classList.remove('active');
+        skillsGrid.classList.add('grid-mode');
+      });
+    }
+
+    buildSliderDots();
+
+    skillTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        setTimeout(() => {
+          skillsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+          buildSliderDots();
+        }, 300);
+      });
+    });
+  }
+
 
   // ── 13. PAGE WIPE TRANSITION ON SECTION CLICK ───
   const pageWipe = document.getElementById('page-wipe');
-  
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
+
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        
+
         // Close mobile menu if open
         if (hamburger.classList.contains('open')) {
           hamburger.classList.remove('open');
           mobileMenu.classList.remove('open');
           document.body.style.overflow = '';
         }
-        
+
         // Trigger transition wipe (slide in)
         pageWipe.classList.remove('reveal');
         pageWipe.classList.add('active');
-        
+
         setTimeout(() => {
           // Perform scrolling instantly behind the screen
           target.scrollIntoView({ behavior: 'auto', block: 'start' });
-          
+
           setTimeout(() => {
             // Dismiss transition wipe (slide out)
             pageWipe.classList.remove('active');
             pageWipe.classList.add('reveal');
-            
+
             setTimeout(() => {
               pageWipe.classList.remove('reveal');
             }, 550);
@@ -535,17 +879,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── 14. ABOUT REDESIGN TAB SWITCHING ─────────────
   const aboutTabs = document.querySelectorAll('.about-tab-btn');
   const aboutPanels = document.querySelectorAll('.about-tab-panel');
-  
+
   aboutTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       aboutTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      
+
       const targetPanelId = 'tab-' + tab.dataset.tab;
       aboutPanels.forEach(panel => {
         if (panel.id === targetPanelId) {
           panel.classList.add('active');
-          
+
           // Special trigger for Education tab animation
           if (tab.dataset.tab === 'education') {
             const tl = panel.querySelector('.edu-timeline');
@@ -613,7 +957,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const projectId = link.dataset.project;
-      
+
       // Select that project inside project console nav
       const targetNavItem = document.querySelector(`.console-nav-item[data-project="${projectId}"]`);
       if (targetNavItem) {
@@ -631,8 +975,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── 3D TILT HOVER EFFECTS ────────────────────────
-  const tiltElements = document.querySelectorAll('.hackathon-card, .project-detail-card');
-  
+  const tiltElements = document.querySelectorAll('.hackathon-card, .deck-device-mockup, .bento-card');
+
   tiltElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
       el.style.transition = 'none';
@@ -644,15 +988,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = el.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      
-      const rotateX = ((centerY - y) / centerY) * 8; 
+
+      const rotateX = ((centerY - y) / centerY) * 8;
       const rotateY = ((x - centerX) / centerX) * 8;
-      
+
       el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-      
+
       const glow = el.querySelector('.hackathon-glow, .project-hero-glow');
       if (glow) {
         const glowX = ((x - centerX) / centerX) * 15;
@@ -660,11 +1004,11 @@ document.addEventListener('DOMContentLoaded', () => {
         glow.style.transform = `translate(${glowX}px, ${glowY}px)`;
       }
     });
-    
+
     el.addEventListener('mouseleave', () => {
       el.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease, border-color 0.5s ease';
       el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-      
+
       const glow = el.querySelector('.hackathon-glow, .project-hero-glow');
       if (glow) {
         glow.style.transition = 'transform 0.5s ease';
@@ -681,7 +1025,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── P1. CURSOR SPOTLIGHT EFFECT ──────────────────────
   //  Mouse position track karo har card mein CSS vars se
   const spotlightEls = document.querySelectorAll(
-    '.skill-card, .cert-card, .hackathon-card, .highlight-item, .approach-item, .stat-card, .console-nav-item, .contact-item'
+    '.skill-card, .cert-card, .hackathon-card, .highlight-item, .approach-item, .stat-card, .deck-dock-tab, .bento-card, .contact-item'
   );
 
   spotlightEls.forEach(el => {
@@ -873,7 +1217,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ════════════════════════════════════════════════════
 
   // ── N1. CUSTOM MAGNETIC GLOW CURSOR ─────────────────
-  const cursorDot  = document.getElementById('cursor-dot');
+  const cursorDot = document.getElementById('cursor-dot');
   const cursorGlow = document.getElementById('cursor-glow');
 
   if (cursorDot && cursorGlow && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
@@ -884,14 +1228,14 @@ document.addEventListener('DOMContentLoaded', () => {
       dotX = e.clientX;
       dotY = e.clientY;
       cursorDot.style.left = dotX + 'px';
-      cursorDot.style.top  = dotY + 'px';
+      cursorDot.style.top = dotY + 'px';
     });
 
     function animateGlow() {
       glowX += (dotX - glowX) * 0.12;
       glowY += (dotY - glowY) * 0.12;
       cursorGlow.style.left = glowX + 'px';
-      cursorGlow.style.top  = glowY + 'px';
+      cursorGlow.style.top = glowY + 'px';
       requestAnimationFrame(animateGlow);
     }
     animateGlow();
@@ -905,7 +1249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
-    window.addEventListener('mouseup',   () => document.body.classList.remove('cursor-click'));
+    window.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
     document.addEventListener('mouseleave', () => { cursorDot.style.opacity = '0'; cursorGlow.style.opacity = '0'; });
     document.addEventListener('mouseenter', () => { cursorDot.style.opacity = '1'; cursorGlow.style.opacity = '1'; });
   }
@@ -921,7 +1265,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let animRunning = false;
 
     function resizeCanvas() {
-      canvas.width  = heroSection.offsetWidth;
+      canvas.width = heroSection.offsetWidth;
       canvas.height = heroSection.offsetHeight;
     }
     resizeCanvas();
@@ -938,8 +1282,8 @@ document.addEventListener('DOMContentLoaded', () => {
         alpha: randomRange(0.3, 0.9),
         speed: randomRange(0.2, 0.6),
         angle: randomRange(0, Math.PI * 2),
-        spin:  randomRange(-0.006, 0.006),
-        hue:   isDark ? randomRange(260, 290) : randomRange(240, 280),
+        spin: randomRange(-0.006, 0.006),
+        hue: isDark ? randomRange(260, 290) : randomRange(240, 280),
       };
     }
 
@@ -999,8 +1343,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ── N3. CONFETTI BURST ON HACKATHON CARD HOVER ──────
-  const GOLD_COLORS   = ['#f59e0b','#fbbf24','#fde68a','#d97706','#fff7ed','#7c3aed'];
-  const SILVER_COLORS = ['#94a3b8','#e0f2fe','#bae6fd','#0891b2','#f8fafc','#c084fc'];
+  const GOLD_COLORS = ['#f59e0b', '#fbbf24', '#fde68a', '#d97706', '#fff7ed', '#7c3aed'];
+  const SILVER_COLORS = ['#94a3b8', '#e0f2fe', '#bae6fd', '#0891b2', '#f8fafc', '#c084fc'];
 
   function launchConfetti(originEl, colors, count) {
     count = count || 18;
@@ -1013,9 +1357,9 @@ document.addEventListener('DOMContentLoaded', () => {
       piece.className = 'confetti-piece';
       const fallY = -(60 + Math.random() * 130);
       const fallX = (Math.random() - 0.5) * 220;
-      const rot   = (Math.random() - 0.5) * 720;
-      const dur   = 0.8 + Math.random() * 0.7;
-      const size  = 6 + Math.random() * 8;
+      const rot = (Math.random() - 0.5) * 720;
+      const dur = 0.8 + Math.random() * 0.7;
+      const size = 6 + Math.random() * 8;
 
       piece.style.cssText = [
         'left:' + (cx + (Math.random() - 0.5) * 80) + 'px',

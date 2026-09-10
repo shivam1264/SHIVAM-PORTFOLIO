@@ -1,18 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shivam Kumar Maurya — Full-Stack & ML Software Engineer. National Hackathon Winner. B.Tech CSE student. Explore my projects and skills." />
-  <meta name="keywords" content="Shivam Kumar Maurya, full stack developer, machine learning, React, Flutter, Node.js, portfolio, hackathon winner" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#e0e5ec" />
+  <meta name="description"
+    content="Shivam Kumar Maurya — Full-Stack & ML Software Engineer. National Hackathon Winner (TIC 2K26 1st Place, BGI 2nd Place). Explore projects, achievements, and code." />
+  <meta name="keywords"
+    content="Shivam Kumar Maurya, shivam maurya sistec, shivam sistec, shivam maurya, SISTec Bhopal, SISTec-R, full stack developer, machine learning engineer, React, Flutter, Node.js, Python, portfolio, hackathon winner, Bhopal, India, shivam1264" />
   <meta name="author" content="Shivam Kumar Maurya" />
-  <meta property="og:title" content="Shivam Kumar Maurya — Portfolio" />
-  <meta property="og:description" content="Full-Stack & ML Engineer. National Hackathon Winner. B.Tech CSE 3rd Year." />
+
+  <!-- Geographic & Indian Region SEO Priority -->
+  <meta name="geo.region" content="IN-MP" />
+  <meta name="geo.placename" content="Bhopal, Madhya Pradesh, India" />
+  <meta name="geo.position" content="23.2599;77.4126" />
+  <meta name="ICBM" content="23.2599, 77.4126" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://shivam1264.github.io/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+
+  <!-- Open Graph / WhatsApp / LinkedIn / Facebook -->
+  <meta property="og:locale" content="en_IN" />
   <meta property="og:type" content="website" />
-  <title>Shivam Kumar Maurya — Portfolio</title>
+  <meta property="og:url" content="https://shivam1264.github.io/" />
+  <meta property="og:title" content="Shivam Kumar Maurya — Full-Stack & ML Engineer" />
+  <meta property="og:description" content="National Hackathon Winner (TIC 2K26 1st Place, BGI 2nd Place). B.Tech CSE 4th Year. Building scalable web apps, mobile systems & AI solutions." />
+  <meta property="og:image" content="https://shivam1264.github.io/assets/profile.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shivam Kumar Maurya — Full-Stack & ML Engineer" />
+  <meta name="twitter:description" content="National Hackathon Winner (TIC 2K26 1st Place, BGI 2nd Place). B.Tech CSE 4th Year." />
+  <meta name="twitter:image" content="https://shivam1264.github.io/assets/profile.png" />
+
+  <!-- Structured Data / JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://shivam1264.github.io/#person",
+        "name": "Shivam Kumar Maurya",
+        "alternateName": ["Shivam Maurya", "Shivam SISTec", "Shivam Maurya SISTec"],
+        "jobTitle": "Full-Stack & Machine Learning Software Engineer",
+        "url": "https://shivam1264.github.io/",
+        "image": "https://shivam1264.github.io/assets/profile.png",
+        "sameAs": [
+          "https://github.com/shivam1264",
+          "https://linkedin.com/in/shivam-kumar-maurya-000370251"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bhopal",
+          "addressRegion": "Madhya Pradesh",
+          "addressCountry": "IN"
+        },
+        "alumniOf": "Sagar Institute of Science, Technology and Research (SISTec-R)",
+        "knowsAbout": [
+          "Full-Stack Web Development",
+          "Machine Learning",
+          "Python",
+          "React.js",
+          "Node.js",
+          "Flutter",
+          "Cybersecurity",
+          "Cloud Computing"
+        ],
+        "awards": [
+          "1st Place Winner - Technovision Innovation Contest (TIC 2K26)",
+          "2nd Place - Bansal Group of Institutes (BGI) Hackathon"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shivam1264.github.io/#website",
+        "url": "https://shivam1264.github.io/",
+        "name": "Shivam Kumar Maurya Portfolio",
+        "description": "Portfolio of Shivam Kumar Maurya — Full-Stack & ML Software Engineer, National Hackathon Winner.",
+        "author": {
+          "@id": "https://shivam1264.github.io/#person"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <title>Shivam Kumar Maurya — Full-Stack &amp; ML Engineer</title>
+  <link rel="icon" type="image/png" href="assets/profile.png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 
   <!-- Custom Glow Cursor -->
@@ -24,10 +106,58 @@
     <div class="scroll-progress-bar" id="scroll-bar"></div>
   </div>
 
-  <!-- PAGE LOADER -->
-  <div id="page-loader">
-    <div class="loader-logo">SKM.</div>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <!-- WELCOME / INTRO SCREEN -->
+  <div id="page-loader" class="welcome-screen">
+    <!-- Ambient Colorful Glow Orbs -->
+    <div class="welcome-orb welcome-orb-1"></div>
+    <div class="welcome-orb welcome-orb-2"></div>
+    <div class="welcome-orb welcome-orb-3"></div>
+
+    <div class="welcome-card">
+      <div class="welcome-badge">
+        <span class="status-led"></span>
+        <span class="welcome-badge-text">Shivam Kumar Maurya · Portfolio</span>
+      </div>
+
+      <div class="welcome-avatar-wrap">
+        <div class="welcome-avatar-border">
+          <img src="assets/profile.png" alt="Shivam Kumar Maurya" class="welcome-avatar" />
+        </div>
+        <span class="welcome-avatar-ring"></span>
+      </div>
+
+      <h1 class="welcome-title">
+        Hello &amp; <span class="welcome-gradient-text">Welcome</span><span class="welcome-exclaim">!</span>
+      </h1>
+
+      <p class="welcome-message">
+        "Turning ideas into <span class="welcome-highlight">high-impact software</span>, intelligent systems &amp; winning solutions."
+      </p>
+
+      <div class="welcome-tech-tags">
+        <span class="chip-blue"><i class="fab fa-react"></i> Full-Stack</span>
+        <span class="chip-purple"><i class="fas fa-brain"></i> Machine Learning</span>
+        <span class="chip-amber"><i class="fas fa-trophy"></i> 2× National Winner</span>
+      </div>
+
+      <div class="welcome-progress-block">
+        <div class="welcome-bar">
+          <div class="welcome-bar-fill" id="welcome-bar-fill"></div>
+        </div>
+        <div class="welcome-status-row">
+          <span class="welcome-status-label" id="welcome-status-label">Setting up environment...</span>
+          <span class="welcome-pct" id="welcome-pct">0%</span>
+        </div>
+      </div>
+
+      <button class="welcome-enter-btn" id="welcome-enter-btn">
+        <span>Explore Portfolio</span> <i class="fas fa-arrow-right"></i>
+      </button>
+
+      <span class="welcome-tap-hint">
+        <i class="fas fa-hand-pointer"></i> Tap anywhere to enter &middot; Auto-opens in <span id="welcome-countdown">12s</span>
+      </span>
+    </div>
   </div>
 
   <!-- ══════════════════════════════════
@@ -36,7 +166,13 @@
   <nav id="navbar">
     <div class="container">
       <div class="nav-inner">
-        <a href="#hero" class="nav-logo">SKM.</a>
+        <div class="nav-logo-group">
+          <a href="#hero" class="nav-logo">Shivam<span>.</span></a>
+          <div class="nav-status">
+            <span class="status-led"></span>
+            <span class="status-text">Online</span>
+          </div>
+        </div>
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -46,10 +182,6 @@
           <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
         <div class="nav-actions">
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
-            <i class="fas fa-moon moon-icon"></i>
-            <i class="fas fa-sun sun-icon"></i>
-          </button>
           <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
@@ -58,14 +190,40 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu" role="navigation">
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#achievements">Awards</a>
-    <a href="#contact">Contact</a>
+  <!-- Mobile Menu Backdrop -->
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+    <div class="mobile-menu-header">
+      <div class="mobile-menu-brand">
+        <span class="mobile-logo">Shivam<span>.</span></span>
+        <div class="nav-status">
+          <span class="status-led"></span>
+          <span class="status-text">Online</span>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="#hero"><i class="fas fa-home"></i> <span>Home</span></a>
+      <a href="#about"><i class="fas fa-user-astronaut"></i> <span>About</span></a>
+      <a href="#skills"><i class="fas fa-microchip"></i> <span>Skills</span></a>
+      <a href="#projects"><i class="fas fa-laptop-code"></i> <span>Projects</span></a>
+      <a href="#achievements"><i class="fas fa-trophy"></i> <span>Awards</span></a>
+      <a href="#certifications"><i class="fas fa-certificate"></i> <span>Certifications</span></a>
+      <a href="#contact" class="mobile-nav-cta"><i class="fas fa-paper-plane"></i> <span>Get In Touch</span></a>
+    </div>
+    <div class="mobile-menu-footer">
+      <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="mobile-social" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener" class="mobile-social" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:mauryashivamkumar841@gmail.com" class="mobile-social" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
   </div>
 
 
@@ -73,10 +231,7 @@
        HERO
   ══════════════════════════════════ -->
   <section id="hero">
-    <div class="hero-blob hero-blob-1"></div>
-    <div class="hero-blob hero-blob-2"></div>
-    <div class="hero-mesh"></div>
-    <div id="hero-particles"><canvas id="particles-canvas"></canvas></div>
+
 
     <div class="container">
       <div class="hero-content">
@@ -85,16 +240,12 @@
         <div class="hero-left">
           <div class="available-badge">
             <span class="available-dot"></span>
-            Available for Internship &amp; Work
-          </div>
-          <div class="hero-greeting">
-            <span class="dot"></span>
-            Open to Internships &amp; Entry-Level Roles
+            Available for Internships &amp; Full-Time Roles
           </div>
 
           <h1 class="hero-name">
-            <span class="word">Hi, I'm</span><br/>
-            <span class="word gradient-text">Shivam Kumar</span><br/>
+            <span class="word">Hi, I'm</span><br />
+            <span class="word gradient-text">Shivam Kumar</span><br />
             <span class="word gradient-text">Maurya.</span>
           </h1>
 
@@ -112,7 +263,7 @@
           </div>
 
           <p class="hero-description">
-            3rd-year B.Tech CSE student passionate about scalable web apps, REST APIs, and ML systems.
+            4th-year B.Tech CSE student passionate about scalable web apps, REST APIs, and ML systems.
             <strong>National Hackathon Winner</strong> (INR 32,000+ prizes) with hands-on experience
             in React, Flutter, Node.js, Python, and OpenCV. Cisco-certified.
           </p>
@@ -122,6 +273,10 @@
               <i class="fas fa-rocket"></i>
               View My Work
             </a>
+            <a href="assets/Shivam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary" id="hero-resume-btn">
+              <i class="fas fa-file-download"></i>
+              Download CV
+            </a>
             <a href="#contact" class="btn btn-outline" id="hero-contact-btn">
               <i class="fas fa-paper-plane"></i>
               Hire Me
@@ -130,10 +285,12 @@
 
           <div class="hero-social">
             <span>Connect</span>
-            <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-link" id="hero-github" aria-label="GitHub">
+            <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-link" id="hero-github"
+              aria-label="GitHub">
               <i class="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener" class="social-link" id="hero-linkedin" aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener"
+              class="social-link" id="hero-linkedin" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
             <a href="mailto:mauryashivamkumar841@gmail.com" class="social-link" id="hero-email" aria-label="Email">
@@ -147,16 +304,11 @@
           <div class="profile-wrapper">
             <div class="profile-ring"></div>
             <div class="profile-ring-dash"></div>
-            <img
-              src="assets/profile.png"
-              alt="Shivam Kumar Maurya — Full-Stack & ML Engineer"
-              class="profile-img"
-              id="profile-photo"
-              loading="eager"
-            />
+            <img src="assets/profile.png" alt="Shivam Kumar Maurya — Full-Stack & ML Engineer" class="profile-img"
+              id="profile-photo" loading="eager" />
 
             <div class="float-badge badge-1">
-              <span class="badge-icon">🏆</span>
+              <span class="badge-icon"><i class="fas fa-trophy" style="color: #f59e0b;"></i></span>
               <div>
                 <div class="badge-label">Hackathon Winner</div>
                 <div class="badge-value">2× National</div>
@@ -164,7 +316,7 @@
             </div>
 
             <div class="float-badge badge-2">
-              <span class="badge-icon">💻</span>
+              <span class="badge-icon"><i class="fas fa-laptop-code" style="color: #0284c7;"></i></span>
               <div>
                 <div class="badge-label">Projects Built</div>
                 <div class="badge-value">10+</div>
@@ -172,10 +324,10 @@
             </div>
 
             <div class="float-badge badge-3">
-              <span class="badge-icon">🎓</span>
+              <span class="badge-icon"><i class="fas fa-graduation-cap" style="color: #8b5cf6;"></i></span>
               <div>
                 <div class="badge-label">B.Tech CSE</div>
-                <div class="badge-value">3rd Year</div>
+                <div class="badge-value">4th Year</div>
               </div>
             </div>
           </div>
@@ -186,7 +338,9 @@
 
     <a href="#about" class="scroll-indicator" id="scroll-indicator">
       <span>Scroll</span>
-      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
     </a>
   </section>
 
@@ -205,7 +359,7 @@
             <img src="assets/profile.png" alt="Shivam Kumar Maurya" id="about-photo" loading="lazy" />
           </div>
           <div class="about-experience-badge">
-            <span class="exp-num">3rd</span>
+            <span class="exp-num">4th</span>
             <span class="exp-label">Year B.Tech</span>
           </div>
         </div>
@@ -234,14 +388,18 @@
 
           <!-- About Tab Contents -->
           <div class="about-tabs-content">
-            
+
             <!-- Tab Panel 1: Story -->
             <div class="about-tab-panel active" id="tab-story">
               <p class="about-bio">
-                I'm <strong>Shivam Kumar Maurya</strong>, a Full-Stack Software Engineer and Machine Learning enthusiast in my 3rd year of B.Tech CSE at <strong>Sagar Institute of Science, Technology and Research, Bhopal</strong>.
+                I'm <strong>Shivam Kumar Maurya</strong>, a Full-Stack Software Engineer and Machine Learning enthusiast
+                in my 4th year of B.Tech CSE at <strong>Sagar Institute of Science, Technology and Research,
+                  Bhopal</strong>.
               </p>
               <p class="about-bio">
-                I specialise in building scalable web applications, cross-platform mobile apps, and intelligent ML systems. My engineering work is fueled by curiosity, a solid foundation in software architecture, and practical experience from development and hackathons.
+                I specialise in building scalable web applications, cross-platform mobile apps, and intelligent ML
+                systems. My engineering work is fueled by curiosity, a solid foundation in software architecture, and
+                practical experience from development and hackathons.
               </p>
               <div class="fancy-quote">
                 "I don't just write code — I build solutions that make a real-world difference."
@@ -261,7 +419,7 @@
                   <div class="edu-meta">
                     <span class="edu-badge year">2023 – 2027</span>
                     <span class="edu-badge score">CGPA: 6.87 / 10</span>
-                    <span class="edu-badge current">Currently 3rd Year</span>
+                    <span class="edu-badge current">Currently 4th Year</span>
                   </div>
                 </div>
 
@@ -296,28 +454,28 @@
             <div class="about-tab-panel" id="tab-info">
               <div class="about-highlights">
                 <div class="highlight-item">
-                  <span class="highlight-icon">🎓</span>
+                  <span class="highlight-icon"><i class="fas fa-user-graduate"></i></span>
                   <div class="highlight-info">
                     <strong>Education</strong>
                     <span>B.Tech CSE — CGPA 6.87</span>
                   </div>
                 </div>
                 <div class="highlight-item">
-                  <span class="highlight-icon">📍</span>
+                  <span class="highlight-icon"><i class="fas fa-location-dot"></i></span>
                   <div class="highlight-info">
                     <strong>Location</strong>
-                    <span>Bhopal / Prayagraj, India 🇮🇳</span>
+                    <span>Bhopal / Prayagraj, India</span>
                   </div>
                 </div>
                 <div class="highlight-item">
-                  <span class="highlight-icon">💼</span>
+                  <span class="highlight-icon"><i class="fas fa-briefcase"></i></span>
                   <div class="highlight-info">
                     <strong>Looking For</strong>
                     <span>Internship / Entry-Level</span>
                   </div>
                 </div>
                 <div class="highlight-item">
-                  <span class="highlight-icon">🌐</span>
+                  <span class="highlight-icon"><i class="fas fa-language"></i></span>
                   <div class="highlight-info">
                     <strong>Languages</strong>
                     <span>English &amp; Hindi</span>
@@ -349,28 +507,32 @@
                     <span class="approach-num">01</span>
                     <strong>Full-Stack Scalability</strong>
                   </div>
-                  <p class="approach-desc">Designing modular systems, RESTful APIs, and responsive frontends that perform consistently under high user load.</p>
+                  <p class="approach-desc">Designing modular systems, RESTful APIs, and responsive frontends that
+                    perform consistently under high user load.</p>
                 </div>
                 <div class="approach-item">
                   <div class="approach-head">
                     <span class="approach-num">02</span>
                     <strong>AI &amp; ML Integration</strong>
                   </div>
-                  <p class="approach-desc">Integrating intelligence into applications via Computer Vision (OpenCV), NLP, OCR pipelines, and prediction models.</p>
+                  <p class="approach-desc">Integrating intelligence into applications via Computer Vision (OpenCV), NLP,
+                    OCR pipelines, and prediction models.</p>
                 </div>
                 <div class="approach-item">
                   <div class="approach-head">
                     <span class="approach-num">03</span>
                     <strong>Rapid Prototyping</strong>
                   </div>
-                  <p class="approach-desc">Leveraging rapid feedback loops during hackathons to build functional, polished, and winning software architectures quickly.</p>
+                  <p class="approach-desc">Leveraging rapid feedback loops during hackathons to build functional,
+                    polished, and winning software architectures quickly.</p>
                 </div>
                 <div class="approach-item">
                   <div class="approach-head">
                     <span class="approach-num">04</span>
                     <strong>Continuous Adaptation</strong>
                   </div>
-                  <p class="approach-desc">Deep-diving into new frameworks, algorithms, and core CS concepts to remain competitive and deliver cutting-edge solutions.</p>
+                  <p class="approach-desc">Deep-diving into new frameworks, algorithms, and core CS concepts to remain
+                    competitive and deliver cutting-edge solutions.</p>
                 </div>
               </div>
             </div>
@@ -382,7 +544,8 @@
               <i class="fas fa-handshake"></i>
               Hire Me
             </a>
-            <a href="assets/Shivam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline" id="about-resume-btn">
+            <a href="assets/Shivam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline"
+              id="about-resume-btn">
               <i class="fas fa-file-pdf"></i>
               View Resume
             </a>
@@ -406,8 +569,9 @@
       <div class="skills-header reveal">
         <div class="section-tag">Expertise</div>
         <h2 class="section-title">Technical <span>Skills</span></h2>
-        <span class="section-divider" style="margin:18px auto;"></span>
-        <p class="section-subtitle">Technologies and tools I've worked with across full-stack, mobile, and AI/ML projects.</p>
+        <span class="section-divider"></span>
+        <p class="section-subtitle">Technologies and tools I've worked with across full-stack, mobile, and AI/ML
+          projects.</p>
       </div>
 
       <div class="skills-tabs reveal">
@@ -418,98 +582,314 @@
         <button class="skill-tab" data-cat="tools" id="skill-tab-tools">Tools</button>
       </div>
 
-      <div class="skills-grid">
+      <!-- Mobile View Mode Toggle (Mobile Only) -->
+      <div class="skills-mobile-controls reveal">
+        <div class="skills-mobile-view-toggle">
+          <button class="mobile-view-btn active" data-view="slider" id="skills-view-slider">
+            <i class="fas fa-arrows-left-right"></i>
+            <span>Swipe Deck</span>
+          </button>
+          <button class="mobile-view-btn" data-view="grid" id="skills-view-grid">
+            <i class="fas fa-table-cells-large"></i>
+            <span>Compact Grid</span>
+          </button>
+        </div>
+      </div>
 
-        <div class="card skill-card reveal" data-cat="frontend">
+      <div class="skills-grid" id="skills-grid">
+
+        <!-- 1. React -->
+        <div class="card skill-card reveal" data-cat="frontend" data-brand="react">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">⚛️</div>
-              <div><div class="skill-name">React.js</div><div class="skill-category">Frontend</div></div>
-            </div><span class="skill-pct">88%</span>
+              <div class="skill-icon" aria-label="React.js Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React.js" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">React.js</div>
+                <div class="skill-category">Frontend</div>
+              </div>
+            </div>
+            <span class="skill-level-badge advanced">Advanced</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          <div class="skill-subtags">
+            <span>Hooks</span>
+            <span>Vite</span>
+            <span>Redux</span>
+            <span>Router</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card skill-card reveal" data-cat="frontend">
+        <!-- 2. Flutter / Mobile -->
+        <div class="card skill-card reveal" data-cat="frontend" data-brand="flutter">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">📱</div>
-              <div><div class="skill-name">Flutter / React Native</div><div class="skill-category">Mobile</div></div>
-            </div><span class="skill-pct">85%</span>
+              <div class="skill-icon" aria-label="Flutter Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">Flutter &amp; Mobile</div>
+                <div class="skill-category">Mobile Systems</div>
+              </div>
+            </div>
+            <span class="skill-level-badge advanced">Advanced</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+          <div class="skill-subtags">
+            <span>Dart</span>
+            <span>Provider</span>
+            <span>Firebase</span>
+            <span>APIs</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">85%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card skill-card reveal" data-cat="frontend">
+        <!-- 3. HTML5 & CSS / JS -->
+        <div class="card skill-card reveal" data-cat="frontend" data-brand="html">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">🌐</div>
-              <div><div class="skill-name">HTML5 / CSS3 / JS</div><div class="skill-category">Frontend</div></div>
-            </div><span class="skill-pct">90%</span>
+              <div class="skill-icon" aria-label="HTML5 Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">HTML5 &amp; CSS3 / JS</div>
+                <div class="skill-category">Frontend Core</div>
+              </div>
+            </div>
+            <span class="skill-level-badge expert">Expert</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          <div class="skill-subtags">
+            <span>ES6+</span>
+            <span>CSS3</span>
+            <span>Animations</span>
+            <span>Responsive</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">92%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="92"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card skill-card reveal" data-cat="backend">
+        <!-- 4. Node.js & Express -->
+        <div class="card skill-card reveal" data-cat="backend" data-brand="node">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">🟢</div>
-              <div><div class="skill-name">Node.js / Express.js</div><div class="skill-category">Backend</div></div>
-            </div><span class="skill-pct">86%</span>
+              <div class="skill-icon" aria-label="Node.js Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">Node.js / Express</div>
+                <div class="skill-category">Backend Services</div>
+              </div>
+            </div>
+            <span class="skill-level-badge advanced">Advanced</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="86"></div></div>
+          <div class="skill-subtags">
+            <span>REST APIs</span>
+            <span>JWT Auth</span>
+            <span>Sockets</span>
+            <span>Middleware</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">86%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="86"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card skill-card reveal" data-cat="backend">
+        <!-- 5. Python & Flask -->
+        <div class="card skill-card reveal" data-cat="backend" data-brand="python">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">🐍</div>
-              <div><div class="skill-name">Python / Flask</div><div class="skill-category">Backend</div></div>
-            </div><span class="skill-pct">88%</span>
+              <div class="skill-icon" aria-label="Python Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">Python / Flask</div>
+                <div class="skill-category">Backend &amp; ML</div>
+              </div>
+            </div>
+            <span class="skill-level-badge advanced">Advanced</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          <div class="skill-subtags">
+            <span>Flask APIs</span>
+            <span>OpenCV</span>
+            <span>Pandas</span>
+            <span>NumPy</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card skill-card reveal" data-cat="backend">
+        <!-- 6. MongoDB & Databases -->
+        <div class="card skill-card reveal" data-cat="backend" data-brand="mongo">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">🗄️</div>
-              <div><div class="skill-name">MongoDB / SQL / Firebase</div><div class="skill-category">Database</div></div>
-            </div><span class="skill-pct">82%</span>
+              <div class="skill-icon" aria-label="MongoDB Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">MongoDB &amp; SQL</div>
+                <div class="skill-category">Database &amp; Cloud</div>
+              </div>
+            </div>
+            <span class="skill-level-badge proficient">Proficient</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+          <div class="skill-subtags">
+            <span>Mongoose</span>
+            <span>Postgres</span>
+            <span>Firestore</span>
+            <span>Queries</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">82%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="82"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card skill-card reveal" data-cat="ml">
+        <!-- 7. Deep Learning & NLP -->
+        <div class="card skill-card reveal" data-cat="ml" data-brand="ai">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">🤖</div>
-              <div><div class="skill-name">Deep Learning / NLP</div><div class="skill-category">AI / ML</div></div>
-            </div><span class="skill-pct">78%</span>
+              <div class="skill-icon" aria-label="PyTorch Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">Deep Learning / AI</div>
+                <div class="skill-category">Applied AI</div>
+              </div>
+            </div>
+            <span class="skill-level-badge proficient">Proficient</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+          <div class="skill-subtags">
+            <span>PyTorch</span>
+            <span>TensorFlow</span>
+            <span>HuggingFace</span>
+            <span>NLP</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">80%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card skill-card reveal" data-cat="ml">
+        <!-- 8. OpenCV & Vision -->
+        <div class="card skill-card reveal" data-cat="ml" data-brand="opencv">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">👁️</div>
-              <div><div class="skill-name">OpenCV / EasyOCR</div><div class="skill-category">Computer Vision</div></div>
-            </div><span class="skill-pct">80%</span>
+              <div class="skill-icon" aria-label="OpenCV Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">OpenCV &amp; Vision</div>
+                <div class="skill-category">Computer Vision</div>
+              </div>
+            </div>
+            <span class="skill-level-badge advanced">Advanced</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+          <div class="skill-subtags">
+            <span>ANPR</span>
+            <span>EasyOCR</span>
+            <span>Filters</span>
+            <span>Leaflet</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">85%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card skill-card reveal" data-cat="tools">
+        <!-- 9. Git & Tools -->
+        <div class="card skill-card reveal" data-cat="tools" data-brand="git">
           <div class="skill-card-top">
             <div class="skill-info">
-              <div class="skill-icon">🐙</div>
-              <div><div class="skill-name">Git / GitHub</div><div class="skill-category">Version Control</div></div>
-            </div><span class="skill-pct">90%</span>
+              <div class="skill-icon" aria-label="Git Logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="tech-icon-img" width="20" height="20" loading="lazy" />
+              </div>
+              <div>
+                <div class="skill-name">Git &amp; DevOps</div>
+                <div class="skill-category">Tooling &amp; Workflow</div>
+              </div>
+            </div>
+            <span class="skill-level-badge expert">Expert</span>
           </div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          <div class="skill-subtags">
+            <span>Git CLI</span>
+            <span>GitHub</span>
+            <span>Postman</span>
+            <span>CI/CD</span>
+          </div>
+          <div class="skill-bar-wrapper">
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">90%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="90"></div>
+            </div>
+          </div>
         </div>
 
+      </div>
+      <!-- Mobile Slider Track Navigation (Mobile Only) -->
+      <div class="skills-slider-nav reveal" id="skills-slider-nav">
+        <button class="slider-nav-btn prev" id="skills-prev-btn" aria-label="Previous skill">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="slider-track-info">
+          <span class="slider-counter" id="skills-counter">1 / 9</span>
+          <div class="slider-dots" id="skills-dots"></div>
+        </div>
+        <button class="slider-nav-btn next" id="skills-next-btn" aria-label="Next skill">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
 
       <!-- Language / Core CS tags -->
@@ -543,246 +923,530 @@
       <div class="projects-header reveal">
         <div class="section-tag">Portfolio</div>
         <h2 class="section-title">Featured <span>Projects</span></h2>
-        <p class="section-subtitle">Real-world solutions I've designed, built, and shipped — from safety apps to AI-powered platforms.</p>
+        <p class="section-subtitle">Real-world solutions I've designed, built, and shipped — from safety apps to
+          AI-powered platforms.</p>
 
-        <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
-          <button class="filter-btn" data-filter="mobile" id="filter-mobile">Mobile</button>
-          <button class="filter-btn" data-filter="web" id="filter-web">Web App</button>
-          <button class="filter-btn" data-filter="ml" id="filter-ml">AI / ML</button>
+        <div class="projects-toolbar">
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+            <button class="filter-btn" data-filter="mobile" id="filter-mobile"><i class="fas fa-mobile-screen"></i> Mobile</button>
+            <button class="filter-btn" data-filter="web" id="filter-web"><i class="fas fa-globe"></i> Web Apps</button>
+            <button class="filter-btn" data-filter="ml" id="filter-ml"><i class="fas fa-microchip"></i> AI / ML</button>
+          </div>
+          <div class="view-mode-toggle">
+            <button class="view-mode-btn active" data-mode="deck" id="view-mode-deck" title="Interactive Studio Deck">
+              <i class="fas fa-layer-group"></i> <span>Studio Deck</span>
+            </button>
+            <button class="view-mode-btn" data-mode="bento" id="view-mode-bento" title="Bento Grid Showcase">
+              <i class="fas fa-table-cells-large"></i> <span>Bento Grid</span>
+            </button>
+          </div>
         </div>
       </div>
 
-      <div class="projects-console-wrapper">
-        
-        <!-- Left Panel: Project Selector Menu -->
-        <div class="console-nav">
-          <div class="console-nav-item active" data-project="shield-ai" data-category="mobile">
-            <span class="nav-num">01</span>
-            <div class="nav-meta">
-              <h4>SHEild AI</h4>
-              <p>Women Safety Platform</p>
-            </div>
-            <i class="fas fa-chevron-right arrow-icon"></i>
+      <!-- ══════════════════════════════════════════
+           VIEW 1: NEXT-GEN INTERACTIVE STUDIO DECK
+           ══════════════════════════════════════════ -->
+      <div class="projects-deck-container" id="projects-deck-view">
+        <div class="projects-deck-frame">
+
+          <!-- Tactile Horizontal Segmented Dock -->
+          <div class="deck-nav-dock">
+            <button class="deck-dock-tab active" data-project="shield-ai" data-category="mobile" id="dock-shield-ai">
+              <div class="dock-tab-head">
+                <span class="dock-num">01</span>
+                <i class="fas fa-shield-halved dock-icon"></i>
+              </div>
+              <div class="dock-tab-body">
+                <span class="dock-title">SHEild AI</span>
+                <span class="dock-pill gold"><i class="fas fa-trophy"></i> 1st Prize TIC</span>
+              </div>
+            </button>
+
+            <button class="deck-dock-tab" data-project="smart-parking" data-category="web ml" id="dock-smart-parking">
+              <div class="dock-tab-head">
+                <span class="dock-num">02</span>
+                <i class="fas fa-square-parking dock-icon"></i>
+              </div>
+              <div class="dock-tab-body">
+                <span class="dock-title">Smart Parking</span>
+                <span class="dock-pill cyan"><i class="fas fa-chart-line"></i> +35% OCR</span>
+              </div>
+            </button>
+
+            <button class="deck-dock-tab" data-project="sagar-group" data-category="web" id="dock-sagar-group">
+              <div class="dock-tab-head">
+                <span class="dock-num">03</span>
+                <i class="fas fa-graduation-cap dock-icon"></i>
+              </div>
+              <div class="dock-tab-body">
+                <span class="dock-title">Sagar Group</span>
+                <span class="dock-pill indigo"><i class="fas fa-bolt"></i> 500+ Users</span>
+              </div>
+            </button>
+
+            <button class="deck-dock-tab" data-project="ml-ai" data-category="ml" id="dock-ml-ai">
+              <div class="dock-tab-head">
+                <span class="dock-num">04</span>
+                <i class="fas fa-brain dock-icon"></i>
+              </div>
+              <div class="dock-tab-body">
+                <span class="dock-title">Neural AI &amp; ML</span>
+                <span class="dock-pill emerald"><i class="fas fa-check-circle"></i> 94.6% Acc</span>
+              </div>
+            </button>
           </div>
 
-          <div class="console-nav-item" data-project="smart-parking" data-category="web ml">
-            <span class="nav-num">02</span>
-            <div class="nav-meta">
-              <h4>Smart Parking</h4>
-              <p>ANPR Entry Tracker</p>
-            </div>
-            <i class="fas fa-chevron-right arrow-icon"></i>
-          </div>
+          <!-- Studio Stage: Active Project Panels -->
+          <div class="deck-stage-wrapper">
 
-          <div class="console-nav-item" data-project="sagar-group" data-category="web">
-            <span class="nav-num">03</span>
-            <div class="nav-meta">
-              <h4>Sagar Group</h4>
-              <p>Student Community Hub</p>
-            </div>
-            <i class="fas fa-chevron-right arrow-icon"></i>
-          </div>
-
-          <div class="console-nav-item" data-project="ml-ai" data-category="ml">
-            <span class="nav-num">04</span>
-            <div class="nav-meta">
-              <h4>ML &amp; AI Exploration</h4>
-              <p>Python Neural Pipelines</p>
-            </div>
-            <i class="fas fa-chevron-right arrow-icon"></i>
-          </div>
-        </div>
-
-        <!-- Right Panel: Active Project Details Frame -->
-        <div class="console-display">
-
-          <!-- 1. SHEild AI -->
-          <article class="project-card project-detail-card active" id="project-shield-ai" data-category="mobile" style="--glow-color: rgba(124, 58, 237, 0.12);">
-            <div class="project-hero-glow"></div>
-            <div class="project-detail-content">
-              <div class="project-detail-text">
-                <div class="project-tags">
-                  <span class="project-tag"><i class="fab fa-flutter"></i> Flutter</span>
-                  <span class="project-tag"><i class="fas fa-fire"></i> Firebase</span>
-                  <span class="project-tag"><i class="fas fa-database"></i> MongoDB</span>
-                  <span class="project-tag"><i class="fas fa-map-marked-alt"></i> Google Maps</span>
-                </div>
-                <div class="project-featured-badge"><i class="fas fa-star"></i> Featured Winner</div>
-                <h3 class="project-title">SHEild AI — Women Safety Application</h3>
-                <div class="project-award-banner">
-                  <span class="gold-trophy">🥇</span>
-                  <div>
-                    <strong>1st Place – TIC 2K26 (INR 20,000)</strong>
-                    <span>🥈 National 2nd – BGI Hackathon (INR 12,000)</span>
+            <!-- 1. SHEild AI -->
+            <article class="deck-project-card active" id="deck-shield-ai" data-category="mobile">
+              <div class="deck-card-grid">
+                <div class="deck-intel-col">
+                  <div class="deck-cat-badge">
+                    <i class="fas fa-mobile-screen"></i>
+                    <span>Cross-Platform Mobile</span>
                   </div>
-                </div>
-                <p class="project-desc">
-                  An advanced cross-platform women safety application serving 200+ test users. Implements voice-triggered emergency SOS activations, real-time precise GPS location sharing, and direct Firebase-backed instant alerts.
-                </p>
-                <ul class="project-features">
-                  <li><i class="fas fa-check-circle"></i> Voice-triggered activation &amp; SOS alerts</li>
-                  <li><i class="fas fa-check-circle"></i> Real-time location tracking &amp; history</li>
-                  <li><i class="fas fa-check-circle"></i> Direct database integration for emergency contacts</li>
-                </ul>
-                <div class="project-footer">
-                  <div class="project-links">
+
+                  <h3 class="deck-project-title">SHEild AI — Women Safety Platform</h3>
+
+                  <!-- Gold Trophy Award Banner -->
+                  <div class="project-award-banner">
+                    <div class="gold-trophy">
+                      <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="award-text-group">
+                      <strong class="award-first">1st Place Winner – TIC 2K26 (INR 20,000)</strong>
+                      <span class="award-second"><i class="fas fa-award"></i> National Runner-Up – BGI Hackathon (INR 12,000)</span>
+                    </div>
+                  </div>
+
+                  <p class="deck-project-desc">
+                    An advanced production-ready women safety platform serving 200+ test users. Implements voice-triggered emergency SOS activations, real-time precise GPS telemetry, and instant automated alert broadcasts to designated emergency contacts.
+                  </p>
+
+                  <div class="deck-features-list">
+                    <div class="deck-feature-item">
+                      <i class="fas fa-microphone-lines"></i>
+                      <span>Voice-triggered emergency activation &amp; silent SOS broadcast</span>
+                    </div>
+                    <div class="deck-feature-item">
+                      <i class="fas fa-location-crosshairs"></i>
+                      <span>Live precision GPS telemetry &amp; breadcrumb movement history</span>
+                    </div>
+                    <div class="deck-feature-item">
+                      <i class="fas fa-database"></i>
+                      <span>Real-time contact dispatch with Firebase cloud integration</span>
+                    </div>
+                  </div>
+
+                  <div class="deck-tags-row">
+                    <span class="deck-tech-chip"><i class="fab fa-flutter"></i> Flutter</span>
+                    <span class="deck-tech-chip"><i class="fas fa-fire"></i> Firebase</span>
+                    <span class="deck-tech-chip"><i class="fas fa-leaf"></i> MongoDB</span>
+                    <span class="deck-tech-chip"><i class="fas fa-map-location-dot"></i> Google Maps API</span>
+                  </div>
+
+                  <div class="deck-actions-row">
                     <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-shield">
-                      <i class="fab fa-github"></i> GitHub Code
+                      <i class="fab fa-github"></i> <span>Explore Source Code</span>
                     </a>
-                  </div>
-                  <span class="project-year">2025–26</span>
-                </div>
-              </div>
-              <div class="project-detail-media">
-                <div class="project-img-wrap">
-                  <img src="assets/projects/project2.png" alt="SHEild AI – Women Safety Application" loading="lazy" />
-                  <div class="project-overlay">
-                    <button class="overlay-btn view-btn" data-lightbox="assets/projects/project2.png" id="lightbox-shield">
-                      <i class="fas fa-eye"></i> Full Preview
+                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/project2.png" id="lightbox-shield">
+                      <i class="fas fa-expand"></i> <span>Full Preview</span>
                     </button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </article>
 
-          <!-- 2. Smart Parking -->
-          <article class="project-card project-detail-card" id="project-smart-parking" data-category="web ml" style="--glow-color: rgba(8, 145, 178, 0.08);">
-            <div class="project-glow"></div>
-            <div class="project-detail-content">
-              <div class="project-detail-text">
-                <div class="project-tags">
-                  <span class="project-tag"><i class="fab fa-python"></i> Python / Flask</span>
-                  <span class="project-tag"><i class="fas fa-eye"></i> OpenCV</span>
-                  <span class="project-tag"><i class="fas fa-keyboard"></i> EasyOCR</span>
-                  <span class="project-tag"><i class="fab fa-react"></i> React Native</span>
+                <div class="deck-media-col">
+                  <div class="deck-device-mockup" data-lightbox="assets/projects/project2.png">
+                    <div class="mockup-header">
+                      <div class="mockup-dots"><span></span><span></span><span></span></div>
+                      <div class="mockup-url-bar"><i class="fas fa-lock"></i> sheild-safety.app/sos</div>
+                    </div>
+                    <div class="mockup-screen">
+                      <img src="assets/projects/project2.png" alt="SHEild AI – Women Safety Application" loading="lazy" />
+                      <div class="mockup-screen-overlay">
+                        <span class="screen-preview-pill"><i class="fas fa-magnifying-glass-plus"></i> Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 class="project-title">Smart Parking System with ANPR</h3>
-                <p class="project-desc">
-                  Automated vehicle entry/exit tracking using OpenCV &amp; EasyOCR. Features a custom OCR correction pipeline using Levenshtein Distance &amp; Bigram Lang Model, boosting plate recognition by 35%. Real-time status dashboard built with Leaflet.js.
-                </p>
-                <ul class="project-features">
-                  <li><i class="fas fa-check-circle"></i> ANPR vehicle entry/exit registration</li>
-                  <li><i class="fas fa-check-circle"></i> Levenshtein OCR correction pipeline</li>
-                  <li><i class="fas fa-check-circle"></i> Real-time status map (Leaflet.js)</li>
-                </ul>
-                <div class="project-footer">
-                  <div class="project-links">
+              </div>
+            </article>
+
+            <!-- 2. Smart Parking -->
+            <article class="deck-project-card" id="deck-smart-parking" data-category="web ml">
+              <div class="deck-card-grid">
+                <div class="deck-intel-col">
+                  <div class="deck-cat-badge">
+                    <i class="fas fa-eye"></i>
+                    <span>Computer Vision &amp; Web Platform</span>
+                  </div>
+
+                  <h3 class="deck-project-title">Smart Parking System with ANPR</h3>
+
+                  <div class="project-stat-highlight cyan-theme">
+                    <div class="stat-highlight-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="stat-highlight-text">
+                      <strong>+35% OCR Recognition Accuracy</strong>
+                      <span>Levenshtein Distance &amp; Bigram Language Model Pipeline</span>
+                    </div>
+                  </div>
+
+                  <p class="deck-project-desc">
+                    High-speed automated vehicle entry and exit tracking using OpenCV and EasyOCR. Features a custom error-correction pipeline utilizing Levenshtein Distance and bigram token frequency, significantly boosting license plate recognition in varied lighting.
+                  </p>
+
+                  <div class="deck-features-list">
+                    <div class="deck-feature-item">
+                      <i class="fas fa-camera"></i>
+                      <span>High-speed ANPR vehicle license plate scanning &amp; logging</span>
+                    </div>
+                    <div class="deck-feature-item">
+                      <i class="fas fa-brain"></i>
+                      <span>Levenshtein OCR string-correction &amp; bigram disambiguation</span>
+                    </div>
+                    <div class="deck-feature-item">
+                      <i class="fas fa-map"></i>
+                      <span>Live slot availability dashboard with interactive Leaflet.js map</span>
+                    </div>
+                  </div>
+
+                  <div class="deck-tags-row">
+                    <span class="deck-tech-chip"><i class="fab fa-python"></i> Python / Flask</span>
+                    <span class="deck-tech-chip"><i class="fas fa-eye"></i> OpenCV</span>
+                    <span class="deck-tech-chip"><i class="fas fa-keyboard"></i> EasyOCR</span>
+                    <span class="deck-tech-chip"><i class="fab fa-react"></i> React Native</span>
+                  </div>
+
+                  <div class="deck-actions-row">
                     <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-parking">
-                      <i class="fab fa-github"></i> GitHub Code
+                      <i class="fab fa-github"></i> <span>Explore Source Code</span>
                     </a>
-                  </div>
-                  <span class="project-year">2024–25</span>
-                </div>
-              </div>
-              <div class="project-detail-media">
-                <div class="project-img-wrap">
-                  <img src="assets/projects/project1.png" alt="Smart Parking System with ANPR" loading="lazy" />
-                  <div class="project-overlay">
-                    <button class="overlay-btn view-btn" data-lightbox="assets/projects/project1.png" id="lightbox-parking">
-                      <i class="fas fa-eye"></i> Full Preview
+                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/project1.png" id="lightbox-parking">
+                      <i class="fas fa-expand"></i> <span>Full Preview</span>
                     </button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </article>
 
-          <!-- 3. Sagar Group -->
-          <article class="project-card project-detail-card" id="project-sagar-group" data-category="web" style="--glow-color: rgba(79, 70, 229, 0.08);">
-            <div class="project-glow"></div>
-            <div class="project-detail-content">
-              <div class="project-detail-text">
-                <div class="project-tags">
-                  <span class="project-tag"><i class="fab fa-node-js"></i> Node.js</span>
-                  <span class="project-tag"><i class="fas fa-server"></i> Express.js</span>
-                  <span class="project-tag"><i class="fas fa-leaf"></i> MongoDB</span>
-                  <span class="project-tag"><i class="fas fa-plug"></i> Socket.io</span>
+                <div class="deck-media-col">
+                  <div class="deck-device-mockup" data-lightbox="assets/projects/project1.png">
+                    <div class="mockup-header">
+                      <div class="mockup-dots"><span></span><span></span><span></span></div>
+                      <div class="mockup-url-bar"><i class="fas fa-lock"></i> smartparking-anpr.io/live</div>
+                    </div>
+                    <div class="mockup-screen">
+                      <img src="assets/projects/project1.png" alt="Smart Parking System with ANPR" loading="lazy" />
+                      <div class="mockup-screen-overlay">
+                        <span class="screen-preview-pill"><i class="fas fa-magnifying-glass-plus"></i> Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 class="project-title">Sagar Group — Community Platform</h3>
-                <p class="project-desc">
-                  A comprehensive social learning platform serving 500+ active students. Integrates JWT session security, real-time messaging, and live global event announcements powered by Socket.io, reducing unnecessary HTTP polling by 80%.
-                </p>
-                <ul class="project-features">
-                  <li><i class="fas fa-check-circle"></i> WebSocket channels &amp; student chats</li>
-                  <li><i class="fas fa-check-circle"></i> Secure JWT authentication &amp; auth sessions</li>
-                  <li><i class="fas fa-check-circle"></i> Integrated course catalog database</li>
-                </ul>
-                <div class="project-footer">
-                  <div class="project-links">
+              </div>
+            </article>
+
+            <!-- 3. Sagar Group -->
+            <article class="deck-project-card" id="deck-sagar-group" data-category="web">
+              <div class="deck-card-grid">
+                <div class="deck-intel-col">
+                  <div class="deck-cat-badge">
+                    <i class="fas fa-users"></i>
+                    <span>Full-Stack Collaboration Hub</span>
+                  </div>
+
+                  <h3 class="deck-project-title">Sagar Group — Student Community Platform</h3>
+
+                  <div class="project-stat-highlight indigo-theme">
+                    <div class="stat-highlight-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="stat-highlight-text">
+                      <strong>500+ Active Students Connected</strong>
+                      <span>Socket.io Real-time Channels · 80% Reduction in Polling</span>
+                    </div>
+                  </div>
+
+                  <p class="deck-project-desc">
+                    A comprehensive social learning platform serving 500+ active students across academic departments. Built with real-time Socket.io channels, JWT session security, and dynamic course cataloging for instantaneous academic peer collaboration.
+                  </p>
+
+                  <div class="deck-features-list">
+                    <div class="deck-feature-item">
+                      <i class="fas fa-comments"></i>
+                      <span>Low-latency WebSocket multi-room chats &amp; peer messaging</span>
+                    </div>
+                    <div class="deck-feature-item">
+                      <i class="fas fa-shield-alt"></i>
+                      <span>Hardened JWT authentication, token rotation &amp; route guards</span>
+                    </div>
+                    <div class="deck-feature-item">
+                      <i class="fas fa-layer-group"></i>
+                      <span>MongoDB aggregated course catalog &amp; global announcement feed</span>
+                    </div>
+                  </div>
+
+                  <div class="deck-tags-row">
+                    <span class="deck-tech-chip"><i class="fab fa-node-js"></i> Node.js</span>
+                    <span class="deck-tech-chip"><i class="fas fa-server"></i> Express.js</span>
+                    <span class="deck-tech-chip"><i class="fas fa-leaf"></i> MongoDB</span>
+                    <span class="deck-tech-chip"><i class="fas fa-plug"></i> Socket.io</span>
+                  </div>
+
+                  <div class="deck-actions-row">
                     <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-sagar">
-                      <i class="fab fa-github"></i> GitHub Code
+                      <i class="fab fa-github"></i> <span>Explore Source Code</span>
                     </a>
-                  </div>
-                  <span class="project-year">2024</span>
-                </div>
-              </div>
-              <div class="project-detail-media">
-                <div class="project-img-wrap">
-                  <img src="assets/projects/project3.png" alt="Sagar Group Educational Platform" loading="lazy" />
-                  <div class="project-overlay">
-                    <button class="overlay-btn view-btn" data-lightbox="assets/projects/project3.png" id="lightbox-sagar">
-                      <i class="fas fa-eye"></i> Full Preview
+                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/project3.png" id="lightbox-sagar">
+                      <i class="fas fa-expand"></i> <span>Full Preview</span>
                     </button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </article>
 
-          <!-- 4. ML & AI Exploration -->
-          <article class="project-card project-detail-card project-detail-card-terminal" id="project-ml-ai" data-category="ml" style="--glow-color: rgba(16, 185, 129, 0.08);">
-            <div class="terminal-glow"></div>
-            <div class="project-detail-content">
-              <div class="project-detail-text">
-                <div class="project-tags">
-                  <span class="project-tag"><i class="fab fa-python"></i> Python</span>
-                  <span class="project-tag"><i class="fas fa-brain"></i> Deep Learning</span>
-                  <span class="project-tag"><i class="fas fa-comments"></i> NLP</span>
+                <div class="deck-media-col">
+                  <div class="deck-device-mockup" data-lightbox="assets/projects/project3.png">
+                    <div class="mockup-header">
+                      <div class="mockup-dots"><span></span><span></span><span></span></div>
+                      <div class="mockup-url-bar"><i class="fas fa-lock"></i> sagargroup.community/hub</div>
+                    </div>
+                    <div class="mockup-screen">
+                      <img src="assets/projects/project3.png" alt="Sagar Group Community Platform" loading="lazy" />
+                      <div class="mockup-screen-overlay">
+                        <span class="screen-preview-pill"><i class="fas fa-magnifying-glass-plus"></i> Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 class="project-title">ML &amp; AI Exploration Projects</h3>
-                <p class="project-desc">
-                  A curated collection of neural network training experiments, tokenization workflows, text processing models, and custom image classifications engineered on structured datasets.
-                </p>
-                <ul class="project-features">
-                  <li><i class="fas fa-check-circle"></i> Model pipelines in TensorFlow &amp; PyTorch</li>
-                  <li><i class="fas fa-check-circle"></i> Natural Language Processing evaluations</li>
-                  <li><i class="fas fa-check-circle"></i> Supervised and unsupervised datasets</li>
-                </ul>
-                <div class="project-footer">
-                  <div class="project-links">
+              </div>
+            </article>
+
+            <!-- 4. Neural AI & ML -->
+            <article class="deck-project-card" id="deck-ml-ai" data-category="ml">
+              <div class="deck-card-grid">
+                <div class="deck-intel-col">
+                  <div class="deck-cat-badge">
+                    <i class="fas fa-brain"></i>
+                    <span>Machine Learning &amp; Neural Pipelines</span>
+                  </div>
+
+                  <h3 class="deck-project-title">Neural AI &amp; NLP Exploration Pipelines</h3>
+
+                  <div class="project-stat-highlight emerald-theme">
+                    <div class="stat-highlight-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="stat-highlight-text">
+                      <strong>94.6% Validation Accuracy</strong>
+                      <span>NLP Sentiment &amp; Multi-class Classifier Architecture</span>
+                    </div>
+                  </div>
+
+                  <p class="deck-project-desc">
+                    A suite of deep learning pipelines, transformer fine-tuning scripts, and classification models trained on structured and unstructured benchmark datasets using PyTorch, TensorFlow, and HuggingFace pipelines.
+                  </p>
+
+                  <div class="deck-features-list">
+                    <div class="deck-feature-item">
+                      <i class="fas fa-network-wired"></i>
+                      <span>Multi-class sentiment models &amp; transformer tokenization</span>
+                    </div>
+                    <div class="deck-feature-item">
+                      <i class="fas fa-sliders"></i>
+                      <span>Automated hyperparameter tuning, loss tracking &amp; checkpointing</span>
+                    </div>
+                    <div class="deck-feature-item">
+                      <i class="fas fa-chart-pie"></i>
+                      <span>Rigorous confusion matrix analytics &amp; 94.6% validation benchmark</span>
+                    </div>
+                  </div>
+
+                  <div class="deck-tags-row">
+                    <span class="deck-tech-chip"><i class="fab fa-python"></i> Python</span>
+                    <span class="deck-tech-chip"><i class="fas fa-fire"></i> PyTorch</span>
+                    <span class="deck-tech-chip"><i class="fas fa-brain"></i> TensorFlow</span>
+                    <span class="deck-tech-chip"><i class="fas fa-robot"></i> Transformers</span>
+                  </div>
+
+                  <div class="deck-actions-row">
                     <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-ml">
-                      <i class="fab fa-github"></i> GitHub Pipeline
+                      <i class="fab fa-github"></i> <span>Explore Source Code</span>
                     </a>
+                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/project4.png" id="lightbox-ml">
+                      <i class="fas fa-expand"></i> <span>Architecture View</span>
+                    </button>
                   </div>
-                  <span class="project-year">2024–25</span>
+                </div>
+
+                <div class="deck-media-col">
+                  <!-- Interactive IDE Code Terminal -->
+                  <div class="deck-terminal-box">
+                    <div class="terminal-topbar">
+                      <div class="terminal-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+                      <div class="terminal-filename"><i class="fab fa-python"></i> neural_pipeline.py</div>
+                      <span class="terminal-badge">Python 3.11</span>
+                    </div>
+                    <div class="terminal-code-body">
+                      <pre><code><span class="code-comment"># Neural AI &amp; NLP Benchmark Pipeline</span>
+<span class="code-keyword">import</span> torch
+<span class="code-keyword">import</span> transformers <span class="code-keyword">as</span> tfm
+<span class="code-keyword">from</span> models.nlp <span class="code-keyword">import</span> DeepLearningPipeline
+
+pipeline = DeepLearningPipeline(
+    task=<span class="code-string">"multi_class_sentiment"</span>,
+    backbone=<span class="code-string">"bert-base-uncased"</span>,
+    epochs=<span class="code-number">100</span>,
+    learning_rate=<span class="code-number">2e-5</span>
+)
+
+metrics = pipeline.train_and_evaluate()
+<span class="code-keyword">print</span>(<span class="code-string">f"Validation Accuracy: {metrics['accuracy']:.1%}"</span>)
+<span class="code-comment"># &gt;&gt;&gt; Validation Accuracy: 94.6%</span>
+<span class="code-comment"># &gt;&gt;&gt; F1-Score: 0.942 | Inference Latency: 14ms</span></code></pre>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="project-detail-media">
-                <div class="project-terminal-container">
-                  <div class="terminal-header">
-                    <div class="terminal-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
-                    <div class="terminal-title">ml_pipeline.py</div>
-                  </div>
-                  <div class="terminal-body">
-                    <pre><code><span class="code-comment"># AI/ML Exploration Pipeline</span>
-<span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd
-<span class="code-keyword">import</span> numpy <span class="code-keyword">as</span> np
+            </article>
 
-model = DeepLearningPipeline(
-  task=<span class="code-string">"NLP_Sentiment_Analysis"</span>,
-  framework=<span class="code-string">"TensorFlow/PyTorch"</span>,
-  datasets=[<span class="code-string">"supervised"</span>, <span class="code-string">"unsupervised"</span>]
-)
-model.fit(epochs=<span class="code-number">100</span>)
-<span class="code-keyword">print</span>(model.evaluate(metric=<span class="code-string">"accuracy"</span>))
-<span class="code-comment"># Output: Validation Accuracy = 94.6%</span></code></pre>
-                  </div>
-                </div>
+          </div>
+
+          <!-- Bottom Telemetry & Step Controller -->
+          <div class="deck-footer-bar">
+            <div class="deck-counter-info">
+              <span class="counter-label">PROJECT</span>
+              <strong class="counter-val" id="deck-counter-display">01 / 04</strong>
+              <div class="deck-step-dots" id="deck-step-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
               </div>
             </div>
-          </article>
+
+            <div class="deck-nav-buttons">
+              <button class="deck-arrow-btn" id="deck-prev-btn" aria-label="Previous Project">
+                <i class="fas fa-arrow-left"></i> <span>Prev</span>
+              </button>
+              <button class="deck-arrow-btn" id="deck-next-btn" aria-label="Next Project">
+                <span>Next</span> <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           VIEW 2: CONTEMPORARY 4-CARD BENTO GRID
+           ══════════════════════════════════════════ -->
+      <div class="projects-bento-container" id="projects-bento-view" style="display: none;">
+        <div class="bento-grid-wrapper">
+
+          <!-- Bento Card 1: SHEild AI (Featured 2-col) -->
+          <div class="bento-card bento-hero-card" data-category="mobile">
+            <div class="bento-card-badge-row">
+              <span class="bento-tag mobile"><i class="fas fa-mobile-screen"></i> Mobile System</span>
+              <span class="bento-award-pill"><i class="fas fa-trophy"></i> 1st Prize Winner TIC 2K26</span>
+            </div>
+            <div class="bento-hero-content">
+              <div class="bento-hero-text">
+                <h3 class="bento-title">SHEild AI — Women Safety Platform</h3>
+                <p class="bento-desc">
+                  Voice-triggered SOS activations, real-time GPS telemetry, and automatic instant emergency broadcasts serving 200+ test users.
+                </p>
+                <div class="bento-chips">
+                  <span><i class="fab fa-flutter"></i> Flutter</span>
+                  <span><i class="fas fa-fire"></i> Firebase</span>
+                  <span><i class="fas fa-leaf"></i> MongoDB</span>
+                  <span><i class="fas fa-map"></i> Maps API</span>
+                </div>
+                <div class="bento-actions">
+                  <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn"><i class="fab fa-github"></i> Code</a>
+                  <button class="btn-pill outline-btn" data-lightbox="assets/projects/project2.png"><i class="fas fa-expand"></i> Preview</button>
+                </div>
+              </div>
+              <div class="bento-hero-media" data-lightbox="assets/projects/project2.png">
+                <img src="assets/projects/project2.png" alt="SHEild AI" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Smart Parking -->
+          <div class="bento-card" data-category="web ml">
+            <div class="bento-card-badge-row">
+              <span class="bento-tag ai"><i class="fas fa-microchip"></i> Vision &amp; Web</span>
+              <span class="bento-stat-pill cyan">+35% OCR Acc</span>
+            </div>
+            <div class="bento-media-wrap" data-lightbox="assets/projects/project1.png">
+              <img src="assets/projects/project1.png" alt="Smart Parking System" loading="lazy" />
+            </div>
+            <h3 class="bento-title">Smart Parking System with ANPR</h3>
+            <p class="bento-desc">
+              Automated vehicle tracking with OpenCV, EasyOCR, and Levenshtein string disambiguation.
+            </p>
+            <div class="bento-chips">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>EasyOCR</span>
+              <span>Leaflet</span>
+            </div>
+            <div class="bento-actions">
+              <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn"><i class="fab fa-github"></i> Code</a>
+              <button class="btn-pill outline-btn" data-lightbox="assets/projects/project1.png"><i class="fas fa-expand"></i> Preview</button>
+            </div>
+          </div>
+
+          <!-- Bento Card 3: Sagar Group -->
+          <div class="bento-card" data-category="web">
+            <div class="bento-card-badge-row">
+              <span class="bento-tag web"><i class="fas fa-globe"></i> Web Platform</span>
+              <span class="bento-stat-pill indigo">500+ Students</span>
+            </div>
+            <div class="bento-media-wrap" data-lightbox="assets/projects/project3.png">
+              <img src="assets/projects/project3.png" alt="Sagar Group Platform" loading="lazy" />
+            </div>
+            <h3 class="bento-title">Sagar Group Community Hub</h3>
+            <p class="bento-desc">
+              Real-time multi-room messaging, JWT auth sessions, and global announcement feeds.
+            </p>
+            <div class="bento-chips">
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>MongoDB</span>
+              <span>Socket.io</span>
+            </div>
+            <div class="bento-actions">
+              <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn"><i class="fab fa-github"></i> Code</a>
+              <button class="btn-pill outline-btn" data-lightbox="assets/projects/project3.png"><i class="fas fa-expand"></i> Preview</button>
+            </div>
+          </div>
+
+          <!-- Bento Card 4: Neural AI -->
+          <div class="bento-card bento-terminal-card" data-category="ml">
+            <div class="bento-card-badge-row">
+              <span class="bento-tag ai"><i class="fas fa-brain"></i> Deep Learning</span>
+              <span class="bento-stat-pill emerald">94.6% Accuracy</span>
+            </div>
+            <div class="bento-code-snippet">
+              <pre><code><span class="code-comment"># Neural Sentiment Pipeline</span>
+pipeline = DeepLearningPipeline(
+    task="multi_class_sentiment",
+    backbone="bert-base-uncased"
+)
+<span class="code-comment"># Val Accuracy: 94.6% | Latency: 14ms</span></code></pre>
+            </div>
+            <h3 class="bento-title">Neural AI &amp; NLP Pipelines</h3>
+            <p class="bento-desc">
+              PyTorch and TensorFlow training pipelines with custom tokenization and evaluations.
+            </p>
+            <div class="bento-chips">
+              <span>PyTorch</span>
+              <span>TensorFlow</span>
+              <span>Transformers</span>
+              <span>Pandas</span>
+            </div>
+            <div class="bento-actions">
+              <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn"><i class="fab fa-github"></i> Pipeline</a>
+              <button class="btn-pill outline-btn" data-lightbox="assets/projects/project4.png"><i class="fas fa-expand"></i> Diagram</button>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -819,9 +1483,9 @@ model.fit(epochs=<span class="code-number">100</span>)
         <div class="card hackathon-card gold-win reveal">
           <div class="hackathon-glow"></div>
           <div class="hackathon-badge"><i class="fas fa-trophy"></i> 1st Place Winner</div>
-          
+
           <div class="hackathon-header">
-            <span class="hackathon-icon">🥇</span>
+            <span class="hackathon-icon gold-medal"><i class="fas fa-trophy"></i></span>
             <div class="hackathon-meta">
               <span class="hackathon-date">Feb 2026</span>
               <h3 class="hackathon-title">TIC 2K26 Hackathon</h3>
@@ -830,7 +1494,8 @@ model.fit(epochs=<span class="code-number">100</span>)
           </div>
 
           <p class="hackathon-desc">
-            Led team <strong>NEXUS</strong> to secure 1st Place out of 200+ competing teams. Designed and developed <strong>SHEild AI</strong>, a voice-activated women's safety platform built in 36 hours.
+            Led team <strong>NEXUS</strong> to secure 1st Place out of 200+ competing teams. Designed and developed
+            <strong>SHEild AI</strong>, a voice-activated women's safety platform built in 36 hours.
           </p>
 
           <div class="hackathon-stats">
@@ -851,9 +1516,9 @@ model.fit(epochs=<span class="code-number">100</span>)
         <div class="card hackathon-card silver-win reveal">
           <div class="hackathon-glow"></div>
           <div class="hackathon-badge"><i class="fas fa-award"></i> National Runner-Up</div>
-          
+
           <div class="hackathon-header">
-            <span class="hackathon-icon">🥈</span>
+            <span class="hackathon-icon silver-medal"><i class="fas fa-medal"></i></span>
             <div class="hackathon-meta">
               <span class="hackathon-date">Mar 2026</span>
               <h3 class="hackathon-title">BGI Hackathon 2026</h3>
@@ -862,7 +1527,8 @@ model.fit(epochs=<span class="code-number">100</span>)
           </div>
 
           <p class="hackathon-desc">
-            Placed 2nd overall out of 600+ teams and 2,800+ participants nationwide. Pitched <strong>SHEild AI</strong> under rigorous engineering and design evaluation criteria.
+            Placed 2nd overall out of 600+ teams and 2,800+ participants nationwide. Pitched <strong>SHEild AI</strong>
+            under rigorous engineering and design evaluation criteria.
           </p>
 
           <div class="hackathon-stats">
@@ -897,35 +1563,155 @@ model.fit(epochs=<span class="code-number">100</span>)
 
       <div class="certs-grid">
 
-        <div class="card cert-card reveal">
-          <div class="cert-icon">🔐</div>
+        <!-- 1. Cisco Cybersecurity -->
+        <div class="card cert-card reveal" data-cert="cisco">
+          <div class="cert-card-header">
+            <span class="cert-issuer-tag cisco">
+              <i class="fas fa-shield-halved"></i> Cisco NetAcad
+            </span>
+            <span class="cert-badge-pill verified">
+              <i class="fas fa-check-circle"></i> Verified
+            </span>
+          </div>
+
+          <div class="cert-icon-dial">
+            <svg viewBox="0 0 48 32" class="cert-brand-svg" aria-label="Cisco Official Logo">
+              <rect x="2" y="16" width="3.2" height="14" rx="1.6" fill="#049fd9" />
+              <rect x="7.5" y="11" width="3.2" height="19" rx="1.6" fill="#049fd9" />
+              <rect x="13" y="6" width="3.2" height="24" rx="1.6" fill="#049fd9" />
+              <rect x="18.5" y="11" width="3.2" height="19" rx="1.6" fill="#049fd9" />
+              <rect x="24" y="1" width="3.2" height="29" rx="1.6" fill="#049fd9" />
+              <rect x="29.5" y="11" width="3.2" height="19" rx="1.6" fill="#049fd9" />
+              <rect x="35" y="6" width="3.2" height="24" rx="1.6" fill="#049fd9" />
+              <rect x="40.5" y="11" width="3.2" height="19" rx="1.6" fill="#049fd9" />
+              <rect x="46" y="16" width="3.2" height="14" rx="1.6" fill="#049fd9" />
+            </svg>
+          </div>
+
           <div class="cert-info">
-            <div class="cert-name">Introduction to Cybersecurity</div>
-            <div class="cert-issuer">Cisco Networking Academy</div>
+            <h3 class="cert-name">Introduction to Cybersecurity</h3>
+            <span class="cert-issuer">Cisco Networking Academy</span>
+          </div>
+
+          <div class="cert-skills-tags">
+            <span>Threat Defense</span>
+            <span>Network Ops</span>
+            <span>Security Protocols</span>
+          </div>
+
+          <div class="cert-card-footer">
+            <span class="cert-verified-stamp">
+              <span class="cert-pulse-dot"></span> Authenticated
+            </span>
+            <span class="cert-type-label">Global Credential</span>
           </div>
         </div>
 
-        <div class="card cert-card reveal">
-          <div class="cert-icon">🐍</div>
+        <!-- 2. Python Essentials 1 -->
+        <div class="card cert-card reveal" data-cert="python-1">
+          <div class="cert-card-header">
+            <span class="cert-issuer-tag python">
+              <i class="fab fa-python"></i> Python Institute
+            </span>
+            <span class="cert-badge-pill verified">
+              <i class="fas fa-check-circle"></i> Part 1
+            </span>
+          </div>
+
+          <div class="cert-icon-dial">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Official Logo" class="cert-brand-img" width="32" height="32" loading="lazy" />
+          </div>
+
           <div class="cert-info">
-            <div class="cert-name">Python Essentials 1</div>
-            <div class="cert-issuer">Cisco Networking Academy</div>
+            <h3 class="cert-name">Python Essentials 1</h3>
+            <span class="cert-issuer">Cisco &amp; OpenEDG Institute</span>
+          </div>
+
+          <div class="cert-skills-tags">
+            <span>Core Syntax</span>
+            <span>Data Structures</span>
+            <span>Control Flow</span>
+            <span>Functions</span>
+          </div>
+
+          <div class="cert-card-footer">
+            <span class="cert-verified-stamp">
+              <span class="cert-pulse-dot"></span> Authenticated
+            </span>
+            <span class="cert-type-label">Foundational</span>
           </div>
         </div>
 
-        <div class="card cert-card reveal">
-          <div class="cert-icon">🐍</div>
+        <!-- 3. Python Essentials 2 -->
+        <div class="card cert-card reveal" data-cert="python-2">
+          <div class="cert-card-header">
+            <span class="cert-issuer-tag python">
+              <i class="fab fa-python"></i> Python Institute
+            </span>
+            <span class="cert-badge-pill gold">
+              <i class="fas fa-star"></i> Part 2 · Pro
+            </span>
+          </div>
+
+          <div class="cert-icon-dial">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Official Logo" class="cert-brand-img" width="32" height="32" loading="lazy" />
+          </div>
+
           <div class="cert-info">
-            <div class="cert-name">Python Essentials 2</div>
-            <div class="cert-issuer">Cisco Networking Academy</div>
+            <h3 class="cert-name">Python Essentials 2</h3>
+            <span class="cert-issuer">Cisco &amp; OpenEDG Institute</span>
+          </div>
+
+          <div class="cert-skills-tags">
+            <span>OOP Architecture</span>
+            <span>Modules &amp; Packages</span>
+            <span>Generators</span>
+            <span>Exceptions</span>
+          </div>
+
+          <div class="cert-card-footer">
+            <span class="cert-verified-stamp">
+              <span class="cert-pulse-dot"></span> Authenticated
+            </span>
+            <span class="cert-type-label">Advanced Level</span>
           </div>
         </div>
 
-        <div class="card cert-card reveal">
-          <div class="cert-icon">☁️</div>
+        <!-- 4. Cloud Computing & Distributed Systems -->
+        <div class="card cert-card reveal" data-cert="nptel">
+          <div class="cert-card-header">
+            <span class="cert-issuer-tag nptel">
+              <i class="fas fa-building-columns"></i> IIT Kanpur
+            </span>
+            <span class="cert-badge-pill elite">
+              <i class="fas fa-medal"></i> Elite Grade
+            </span>
+          </div>
+
+          <div class="cert-icon-dial">
+            <div class="cert-cloud-glyph">
+              <i class="fas fa-cloud"></i>
+              <i class="fas fa-network-wired cert-glyph-sub"></i>
+            </div>
+          </div>
+
           <div class="cert-info">
-            <div class="cert-name">Cloud Computing &amp; Distributed Systems (Elite)</div>
-            <div class="cert-issuer">NPTEL — IIT Kanpur</div>
+            <h3 class="cert-name">Cloud Computing &amp; Distributed Systems</h3>
+            <span class="cert-issuer">NPTEL — IIT Kanpur</span>
+          </div>
+
+          <div class="cert-skills-tags">
+            <span>Virtualization</span>
+            <span>MapReduce</span>
+            <span>Distributed Storage</span>
+            <span>Consensus</span>
+          </div>
+
+          <div class="cert-card-footer">
+            <span class="cert-verified-stamp elite">
+              <span class="cert-pulse-dot gold"></span> Elite Standard
+            </span>
+            <span class="cert-type-label">Top 5% National</span>
           </div>
         </div>
 
@@ -947,31 +1733,32 @@ model.fit(epochs=<span class="code-number">100</span>)
             <div class="section-tag">Get In Touch</div>
             <h2 class="section-title">Let's <span>Connect</span></h2>
             <p class="contact-intro-text">
-              I'm actively looking for internship opportunities or entry-level roles in backend development or ML engineering.
+              I'm actively looking for internship opportunities or entry-level roles in backend development or ML
+              engineering.
               If you have a project, opening, or just want to say hi — I'd love to hear from you!
             </p>
           </div>
 
           <div class="contact-details">
             <a href="mailto:mauryashivamkumar841@gmail.com" class="contact-item" id="contact-email-link">
-              <div class="contact-item-icon">📧</div>
+              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
               <div class="contact-item-info">
                 <strong>Email</strong>
                 <span>mauryashivamkumar841@gmail.com</span>
               </div>
             </a>
             <a href="tel:+917235986871" class="contact-item" id="contact-phone-link">
-              <div class="contact-item-icon">📱</div>
+              <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
               <div class="contact-item-info">
                 <strong>Phone</strong>
                 <span>+91 72359 86871</span>
               </div>
             </a>
             <div class="contact-item">
-              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-icon"><i class="fas fa-location-dot"></i></div>
               <div class="contact-item-info">
                 <strong>Location</strong>
-                <span>Bhopal / Prayagraj, India 🇮🇳</span>
+                <span>Bhopal / Prayagraj, India</span>
               </div>
             </div>
           </div>
@@ -979,10 +1766,12 @@ model.fit(epochs=<span class="code-number">100</span>)
           <div class="contact-socials">
             <h4>Find me on</h4>
             <div class="social-links-row">
-              <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-pill" id="contact-github">
+              <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-pill"
+                id="contact-github">
                 <i class="fab fa-github"></i> GitHub
               </a>
-              <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener" class="social-pill" id="contact-linkedin">
+              <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener"
+                class="social-pill" id="contact-linkedin">
                 <i class="fab fa-linkedin-in"></i> LinkedIn
               </a>
             </div>
@@ -991,7 +1780,7 @@ model.fit(epochs=<span class="code-number">100</span>)
 
         <!-- Right: Form -->
         <div class="contact-form-wrap reveal-right">
-          <div class="form-title">Send a <span>Message</span> ✉️</div>
+          <div class="form-title">Send a <span>Message</span> <i class="fas fa-paper-plane form-title-icon"></i></div>
           <form id="contact-form" novalidate>
             <div class="form-grid">
               <div class="form-group float-label">
@@ -1013,7 +1802,7 @@ model.fit(epochs=<span class="code-number">100</span>)
             </div>
             <button type="submit" class="form-submit" id="form-submit">
               <span>Send Message</span>
-              <span>→</span>
+              <i class="fas fa-paper-plane"></i>
             </button>
             <p class="form-msg" id="form-msg" aria-live="polite"></p>
           </form>
@@ -1030,15 +1819,17 @@ model.fit(epochs=<span class="code-number">100</span>)
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-logo">SKM.</div>
+        <div class="footer-logo">Shivam<span>.</span></div>
         <p class="footer-copy">
-          © 2025 Shivam Kumar Maurya. Made with <span>♥</span> in India
+          © 2025 Shivam Kumar Maurya. Made with <span class="footer-heart"><i class="fas fa-heart"></i></span> in India
         </p>
         <div class="footer-socials">
-          <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-link" id="footer-github" aria-label="GitHub">
+          <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-link" id="footer-github"
+            aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener" class="social-link" id="footer-linkedin" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/shivam-kumar-maurya-000370251" target="_blank" rel="noopener"
+            class="social-link" id="footer-linkedin" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
           <a href="mailto:mauryashivamkumar841@gmail.com" class="social-link" id="footer-email" aria-label="Email">
@@ -1055,9 +1846,10 @@ model.fit(epochs=<span class="code-number">100</span>)
   <div id="page-wipe">
     <div class="wipe-panel wipe-panel-1"></div>
     <div class="wipe-panel wipe-panel-2"></div>
-    <div class="wipe-logo">SKM.</div>
+    <div class="wipe-logo">Shivam<span>.</span></div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
