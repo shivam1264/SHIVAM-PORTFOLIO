@@ -380,11 +380,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update counter and dots
     const actualIndex = Array.from(dockTabs).indexOf(targetTab);
+    const totalCount = dockTabs.length;
     if (counterDisplay) {
-      counterDisplay.textContent = `0${actualIndex + 1} / 04`;
+      counterDisplay.textContent = `${String(actualIndex + 1).padStart(2, '0')} / ${String(totalCount).padStart(2, '0')}`;
     }
 
-    stepDots.forEach((dot, i) => {
+    const currentDots = document.querySelectorAll('.deck-step-dots .dot');
+    currentDots.forEach((dot, i) => {
       dot.classList.toggle('active', i === actualIndex);
     });
   }
