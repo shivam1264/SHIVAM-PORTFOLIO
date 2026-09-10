@@ -3247,47 +3247,7 @@ section {
 }
 
 .mockup-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
-  background: #1e242c;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.mockup-dots {
-  display: flex;
-  gap: 5px;
-}
-
-.mockup-dots span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.mockup-dots span:nth-child(1) { background: #ff5f56; }
-.mockup-dots span:nth-child(2) { background: #ffbd2e; }
-.mockup-dots span:nth-child(3) { background: #27c93f; }
-
-.mockup-url-bar {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(0, 0, 0, 0.3);
-  padding: 3px 12px;
-  border-radius: var(--radius-full);
-  flex: 1;
-  max-width: 240px;
-}
-
-.mockup-url-bar i {
-  font-size: 0.55rem;
-  color: #10b981;
+  display: none !important;
 }
 
 .mockup-screen {
