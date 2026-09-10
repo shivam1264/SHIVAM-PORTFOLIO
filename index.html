@@ -1010,16 +1010,6 @@
               </div>
             </button>
 
-            <button class="deck-dock-tab" data-project="ml-ai" data-category="ml" id="dock-ml-ai">
-              <div class="dock-tab-head">
-                <span class="dock-num">06</span>
-                <i class="fas fa-brain dock-icon"></i>
-              </div>
-              <div class="dock-tab-body">
-                <span class="dock-title">Neural AI &amp; ML</span>
-                <span class="dock-pill emerald"><i class="fas fa-check-circle"></i> 94.6% Acc</span>
-              </div>
-            </button>
           </div>
 
           <!-- Studio Stage: Active Project Panels -->
@@ -1435,119 +1425,19 @@
                 </div>
               </div>
             </article>
-
-            <!-- 6. Neural AI & ML -->
-            <article class="deck-project-card" id="deck-ml-ai" data-category="ml">
-              <div class="deck-card-grid">
-                <div class="deck-intel-col">
-                  <div class="deck-cat-badge">
-                    <i class="fas fa-brain"></i>
-                    <span>Machine Learning &amp; Neural Pipelines</span>
-                  </div>
-
-                  <h3 class="deck-project-title">Neural AI &amp; NLP Exploration Pipelines</h3>
-
-                  <!-- Sleek KPI Metrics Grid -->
-                  <div class="deck-metrics-grid emerald-theme">
-                    <div class="deck-metric-box">
-                      <span class="metric-val">94.6%</span>
-                      <span class="metric-lbl">Benchmark Acc</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">0.42s</span>
-                      <span class="metric-lbl">Inference Latency</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">BERT</span>
-                      <span class="metric-lbl">Transformer</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">PyTorch</span>
-                      <span class="metric-lbl">100 Epochs</span>
-                    </div>
-                  </div>
-
-                  <p class="deck-project-desc">
-                    A suite of deep learning pipelines, transformer fine-tuning scripts, and classification models trained on structured and unstructured benchmark datasets using PyTorch, TensorFlow, and HuggingFace pipelines.
-                  </p>
-
-                  <div class="deck-features-list">
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Transformer Fine-Tuning:</strong> Multi-class sentiment analysis &amp; contextual tokenization with BERT</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Training Instrumentation:</strong> Automated learning-rate scheduling, loss monitoring &amp; checkpointing</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Diagnostic Analytics:</strong> High-resolution confusion matrix tracking &amp; 94.6% validation benchmark</span>
-                    </div>
-                  </div>
-
-                  <div class="deck-tags-row">
-                    <span class="deck-tech-chip"><i class="fab fa-python"></i> Python</span>
-                    <span class="deck-tech-chip"><i class="fas fa-fire"></i> PyTorch</span>
-                    <span class="deck-tech-chip"><i class="fas fa-brain"></i> TensorFlow</span>
-                    <span class="deck-tech-chip"><i class="fas fa-robot"></i> Transformers</span>
-                  </div>
-
-                  <div class="deck-actions-row">
-                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-ml">
-                      <i class="fab fa-github"></i> <span>Explore Source Code</span>
-                    </a>
-                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/project4.png" id="lightbox-ml">
-                      <i class="fas fa-expand"></i> <span>Architecture View</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="deck-media-col">
-                  <!-- Interactive IDE Code Terminal -->
-                  <div class="deck-terminal-box">
-                    <div class="terminal-topbar">
-                      <div class="terminal-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
-                      <div class="terminal-filename"><i class="fab fa-python"></i> neural_pipeline.py</div>
-                      <span class="terminal-badge">Python 3.11</span>
-                    </div>
-                    <div class="terminal-code-body">
-                      <pre><code><span class="code-comment"># Neural AI &amp; NLP Benchmark Pipeline</span>
-<span class="code-keyword">import</span> torch
-<span class="code-keyword">import</span> transformers <span class="code-keyword">as</span> tfm
-<span class="code-keyword">from</span> models.nlp <span class="code-keyword">import</span> DeepLearningPipeline
-
-pipeline = DeepLearningPipeline(
-    task=<span class="code-string">"multi_class_sentiment"</span>,
-    backbone=<span class="code-string">"bert-base-uncased"</span>,
-    epochs=<span class="code-number">100</span>,
-    learning_rate=<span class="code-number">2e-5</span>
-)
-
-metrics = pipeline.train_and_evaluate()
-<span class="code-keyword">print</span>(<span class="code-string">f"Validation Accuracy: {metrics['accuracy']:.1%}"</span>)
-<span class="code-comment"># &gt;&gt;&gt; Validation Accuracy: 94.6%</span>
-<span class="code-comment"># &gt;&gt;&gt; F1-Score: 0.942 | Inference Latency: 14ms</span></code></pre>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
           </div>
 
           <!-- Bottom Telemetry & Step Controller -->
           <div class="deck-footer-bar">
             <div class="deck-counter-info">
               <span class="counter-label">PROJECT</span>
-              <strong class="counter-val" id="deck-counter-display">01 / 06</strong>
+              <strong class="counter-val" id="deck-counter-display">01 / 05</strong>
               <div class="deck-step-dots" id="deck-step-dots">
                 <span class="dot active" data-index="0"></span>
                 <span class="dot" data-index="1"></span>
                 <span class="dot" data-index="2"></span>
                 <span class="dot" data-index="3"></span>
                 <span class="dot" data-index="4"></span>
-                <span class="dot" data-index="5"></span>
               </div>
             </div>
 
@@ -1702,35 +1592,6 @@ metrics = pipeline.train_and_evaluate()
             </div>
           </div>
 
-          <!-- Bento Card 6: Neural AI -->
-          <div class="bento-card bento-terminal-card" data-category="ml">
-            <div class="bento-card-badge-row">
-              <span class="bento-tag ai"><i class="fas fa-brain"></i> Deep Learning</span>
-              <span class="bento-stat-pill emerald">94.6% Accuracy</span>
-            </div>
-            <div class="bento-code-snippet">
-              <pre><code><span class="code-comment"># Neural Sentiment Pipeline</span>
-pipeline = DeepLearningPipeline(
-    task="multi_class_sentiment",
-    backbone="bert-base-uncased"
-)
-<span class="code-comment"># Val Accuracy: 94.6% | Latency: 14ms</span></code></pre>
-            </div>
-            <h3 class="bento-title">Neural AI &amp; NLP Pipelines</h3>
-            <p class="bento-desc">
-              PyTorch and TensorFlow training pipelines with custom tokenization and evaluations.
-            </p>
-            <div class="bento-chips">
-              <span>PyTorch</span>
-              <span>TensorFlow</span>
-              <span>Transformers</span>
-              <span>Pandas</span>
-            </div>
-            <div class="bento-actions">
-              <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn"><i class="fab fa-github"></i> Pipeline</a>
-              <button class="btn-pill outline-btn" data-lightbox="assets/projects/project4.png"><i class="fas fa-expand"></i> Diagram</button>
-            </div>
-          </div>
 
         </div>
       </div>
