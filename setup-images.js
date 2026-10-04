@@ -9,8 +9,10 @@ const projectsDir = path.join(assetsDir, 'projects');
 if (!fs.existsSync(assetsDir)) fs.mkdirSync(assetsDir, { recursive: true });
 if (!fs.existsSync(projectsDir)) fs.mkdirSync(projectsDir, { recursive: true });
 
+const newProfilePath = 'C:\\Users\\maury\\.gemini\\antigravity-ide\\brain\\abf7d02e-71ba-4de4-9573-e3469cae561f\\.user_uploaded\\media_1791143675043.jpg';
+
 const copies = [
-  ['media__1782325570269.jpg', path.join(assetsDir, 'profile.png')],
+  [newProfilePath, path.join(assetsDir, 'profile.png'), true],
   ['project_1_1782300361466.png', path.join(projectsDir, 'project1.png')],
   ['project_2_1782300373139.png', path.join(projectsDir, 'project2.png')],
   ['project_3_1782300385671.png', path.join(projectsDir, 'project3.png')],
@@ -18,8 +20,8 @@ const copies = [
 ];
 
 console.log('Copying portfolio images...');
-copies.forEach(([src, dest]) => {
-  const srcPath = path.join(artifactDir, src);
+copies.forEach(([src, dest, isAbs]) => {
+  const srcPath = isAbs ? src : path.join(artifactDir, src);
   if (fs.existsSync(srcPath)) {
     fs.copyFileSync(srcPath, dest);
     console.log(`✅ Copied: ${path.basename(dest)}`);

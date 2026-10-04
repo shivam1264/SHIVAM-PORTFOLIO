@@ -8,92 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Always enforce light mode; clear any stored dark preference.
   document.documentElement.removeAttribute('data-theme');
   localStorage.setItem('theme', 'light');
-  // ── WELCOME INTRO SCREEN ──
-  const welcomeScreen = document.getElementById('page-loader');
-  const welcomeBarFill = document.getElementById('welcome-bar-fill');
-  const welcomePct = document.getElementById('welcome-pct');
-  const welcomeStatusLabel = document.getElementById('welcome-status-label');
-  const welcomeEnterBtn = document.getElementById('welcome-enter-btn');
-  const welcomeCountdown = document.getElementById('welcome-countdown');
 
-  let introDismissed = false;
-  let autoDismissTimer = null;
-  let countdownTimer = null;
-
-  function dismissIntro() {
-    if (introDismissed || !welcomeScreen) return;
-    introDismissed = true;
-    if (autoDismissTimer) clearTimeout(autoDismissTimer);
-    if (countdownTimer) clearInterval(countdownTimer);
-    welcomeScreen.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-
-  if (welcomeScreen && !welcomeScreen.classList.contains('hidden')) {
-    document.body.style.overflow = 'hidden';
-
-    // 1. Click on button to enter
-    if (welcomeEnterBtn) {
-      welcomeEnterBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dismissIntro();
-      });
-    }
-
-    // 2. Click / Tap anywhere on the screen or card to enter
-    welcomeScreen.addEventListener('click', dismissIntro);
-
-    // 3. Press any key (Enter, Space, Escape) to enter
-    document.addEventListener('keydown', (e) => {
-      if (!introDismissed && (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape')) {
-        dismissIntro();
-      }
-    });
-
-    // 4. 12 Seconds countdown & auto-dismiss
-    let secondsRemaining = 12;
-    countdownTimer = setInterval(() => {
-      secondsRemaining--;
-      if (welcomeCountdown) {
-        welcomeCountdown.textContent = secondsRemaining + 's';
-      }
-      if (secondsRemaining <= 0) {
-        clearInterval(countdownTimer);
-        dismissIntro();
-      }
-    }, 1000);
-
-    autoDismissTimer = setTimeout(() => {
-      dismissIntro();
-    }, 12000);
-  }
-
-  // Initial setup progress animation (quick ~1.2s fill to 100% Ready)
-  let introProgress = 0;
-  const statusSteps = [
-    { at: 0, text: 'Setting up environment...' },
-    { at: 35, text: 'Loading projects & achievements...' },
-    { at: 75, text: 'Preparing interactive systems...' },
-    { at: 100, text: 'Ready! Welcome to my portfolio.' }
-  ];
-
-  const introProgressTimer = setInterval(() => {
-    introProgress += 10;
-    if (introProgress >= 100) {
-      introProgress = 100;
-      clearInterval(introProgressTimer);
-      if (welcomeBarFill) welcomeBarFill.style.width = '100%';
-      if (welcomePct) welcomePct.textContent = '100%';
-      if (welcomeStatusLabel) welcomeStatusLabel.textContent = 'Ready! Welcome to my portfolio.';
-    } else {
-      if (welcomeBarFill) welcomeBarFill.style.width = introProgress + '%';
-      if (welcomePct) welcomePct.textContent = introProgress + '%';
-      const step = statusSteps.slice().reverse().find(s => introProgress >= s.at);
-      if (step && welcomeStatusLabel) {
-        welcomeStatusLabel.textContent = step.text;
-      }
-    }
-  }, 100);
 
   // ── 1. NAVBAR SCROLL EFFECT & PROGRESS BAR ───
   const navbar = document.getElementById('navbar');
@@ -196,37 +111,39 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const typewriterEl = document.getElementById('typewriter');
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typingSpeed = 80;
+  if (typewriterEl) {
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 80;
 
-  function type() {
-    const currentRole = roles[roleIndex];
+    function type() {
+      const currentRole = roles[roleIndex];
 
-    if (isDeleting) {
-      typewriterEl.textContent = currentRole.slice(0, charIndex - 1);
-      charIndex--;
-      typingSpeed = 45;
-    } else {
-      typewriterEl.textContent = currentRole.slice(0, charIndex + 1);
-      charIndex++;
-      typingSpeed = 90;
+      if (isDeleting) {
+        typewriterEl.textContent = currentRole.slice(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 45;
+      } else {
+        typewriterEl.textContent = currentRole.slice(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 90;
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        typingSpeed = 1500; // pause
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingSpeed = 400;
+      }
+
+      setTimeout(type, typingSpeed);
     }
 
-    if (!isDeleting && charIndex === currentRole.length) {
-      isDeleting = true;
-      typingSpeed = 1500; // pause
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-      typingSpeed = 400;
-    }
-
-    setTimeout(type, typingSpeed);
+    type();
   }
-
-  type();
 
 
   // ── 4. SCROLL SPY (active nav link) ──────────
@@ -836,43 +753,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ── 13. PAGE WIPE TRANSITION ON SECTION CLICK ───
-  const pageWipe = document.getElementById('page-wipe');
-
+  // ── 13. FAST SMOOTH KINETIC SCROLL ON ANCHOR CLICK ───
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      if (!targetId || targetId === '#' || targetId.length <= 1) return;
 
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
 
         // Close mobile menu if open
-        if (hamburger.classList.contains('open')) {
+        if (hamburger && hamburger.classList.contains('open')) {
           hamburger.classList.remove('open');
-          mobileMenu.classList.remove('open');
+          if (mobileMenu) mobileMenu.classList.remove('open');
+          if (mobileBackdrop) mobileBackdrop.classList.remove('open');
           document.body.style.overflow = '';
         }
 
-        // Trigger transition wipe (slide in)
-        pageWipe.classList.remove('reveal');
-        pageWipe.classList.add('active');
+        // Fast smooth scroll with navbar offset calculation
+        const navHeight = navbar ? navbar.offsetHeight : 70;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight + 8;
 
-        setTimeout(() => {
-          // Perform scrolling instantly behind the screen
-          target.scrollIntoView({ behavior: 'auto', block: 'start' });
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
 
-          setTimeout(() => {
-            // Dismiss transition wipe (slide out)
-            pageWipe.classList.remove('active');
-            pageWipe.classList.add('reveal');
-
-            setTimeout(() => {
-              pageWipe.classList.remove('reveal');
-            }, 550);
-          }, 150);
-        }, 450); // wait for panels to meet in center (approx 450ms)
+        // Update URL hash smoothly without abrupt page jump
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, null, targetId);
+        }
       }
     });
   });
@@ -1407,5 +1318,166 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 100);
     });
   }
+
+  // ── 15. TOAST NOTIFICATION UTILITY ───────────────────
+  const toastEl = document.getElementById('portfolio-toast');
+  const toastMsg = document.getElementById('toast-msg');
+  let toastTimer = null;
+
+  function showToast(message, duration = 3000) {
+    if (!toastEl) return;
+    if (toastMsg) toastMsg.textContent = message;
+    toastEl.classList.add('show');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toastEl.classList.remove('show');
+    }, duration);
+  }
+
+  // ── 16. ONE-CLICK EMAIL COPY ──────────────────────────
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const emailToCopy = 'mauryashivamkumar841@gmail.com';
+      try {
+        await navigator.clipboard.writeText(emailToCopy);
+        const icon = copyEmailBtn.querySelector('i');
+        const originalClass = icon ? icon.className : 'fas fa-copy';
+        if (icon) icon.className = 'fas fa-check';
+        showToast('Email copied to clipboard!');
+        setTimeout(() => {
+          if (icon) icon.className = originalClass;
+        }, 2500);
+      } catch (err) {
+        showToast('Direct Email: ' + emailToCopy);
+      }
+    });
+  }
+
+  // ── 17. QUICK RESUME PREVIEW MODAL ───────────────────
+  const resumeModal = document.getElementById('resume-modal');
+  const resumeCloseBtn = document.getElementById('resume-modal-close');
+  const previewBtns = [
+    document.getElementById('hero-resume-preview-btn'),
+    document.getElementById('about-resume-preview-btn')
+  ].filter(Boolean);
+
+  function openResumeModal() {
+    if (!resumeModal) return;
+    resumeModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeResumeModal() {
+    if (!resumeModal) return;
+    resumeModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  previewBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openResumeModal();
+    });
+  });
+
+  if (resumeCloseBtn) {
+    resumeCloseBtn.addEventListener('click', closeResumeModal);
+  }
+
+  if (resumeModal) {
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) {
+        closeResumeModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && resumeModal && resumeModal.classList.contains('open')) {
+      closeResumeModal();
+    }
+  });
+
+  // ── 18. HACKATHON AWARD PROOF MODAL ──────────────────
+  const awardModal = document.getElementById('award-proof-modal');
+  const awardCloseBtn = document.getElementById('award-modal-close');
+  const awardHeading = document.getElementById('award-modal-heading');
+  const awardSubtitle = document.getElementById('award-modal-subtitle');
+  const awardImg = document.getElementById('award-proof-img');
+  const awardOpenFull = document.getElementById('award-open-full');
+  const awardPillPrize = document.getElementById('award-pill-prize');
+  const awardPillTeam = document.getElementById('award-pill-team');
+  const awardProofBtns = document.querySelectorAll('.award-proof-btn');
+
+  const awardData = {
+    'tic-2k26': {
+      title: 'Technovision Innovation Contest (TIC 2K26)',
+      subtitle: 'Official Winner Certificate • 1st Place Grand Champion',
+      image: 'assets/tic_2k26_award.jpg',
+      prize: '1st Place • INR 20,000 Cash Prize',
+      team: 'Team NEXUS (36h Hack)'
+    },
+    'bgi-2026': {
+      title: 'BGI National Hackathon 2026',
+      subtitle: 'Official Certificate of Excellence • National Runner-Up (2nd Place)',
+      image: 'assets/bgi_hackathon_award.jpg',
+      prize: '2nd Place • INR 12,000 Cash Prize',
+      team: 'Team NEXUS (600+ Teams)'
+    }
+  };
+
+  function openAwardModal(proofId) {
+    if (!awardModal) return;
+    const data = awardData[proofId] || awardData['tic-2k26'];
+
+    if (awardHeading) awardHeading.textContent = data.title;
+    if (awardSubtitle) awardSubtitle.textContent = data.subtitle;
+    if (awardImg) {
+      awardImg.src = data.image;
+      awardImg.alt = data.title + ' Award Certificate';
+    }
+    if (awardOpenFull) {
+      awardOpenFull.href = data.image;
+    }
+    if (awardPillPrize) awardPillPrize.textContent = data.prize;
+    if (awardPillTeam) awardPillTeam.textContent = data.team;
+
+    awardModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAwardModal() {
+    if (!awardModal) return;
+    awardModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  awardProofBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const proofId = btn.getAttribute('data-proof') || 'tic-2k26';
+      openAwardModal(proofId);
+    });
+  });
+
+  if (awardCloseBtn) {
+    awardCloseBtn.addEventListener('click', closeAwardModal);
+  }
+
+  if (awardModal) {
+    awardModal.addEventListener('click', (e) => {
+      if (e.target === awardModal) {
+        closeAwardModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && awardModal && awardModal.classList.contains('open')) {
+      closeAwardModal();
+    }
+  });
 
 });

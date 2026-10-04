@@ -110,59 +110,7 @@
     <div class="scroll-progress-bar" id="scroll-bar"></div>
   </div>
 
-  <!-- WELCOME / INTRO SCREEN -->
-  <div id="page-loader" class="welcome-screen">
-    <!-- Ambient Colorful Glow Orbs -->
-    <div class="welcome-orb welcome-orb-1"></div>
-    <div class="welcome-orb welcome-orb-2"></div>
-    <div class="welcome-orb welcome-orb-3"></div>
 
-    <div class="welcome-card">
-      <div class="welcome-badge">
-        <span class="status-led"></span>
-        <span class="welcome-badge-text">Shivam Kumar Maurya · Portfolio</span>
-      </div>
-
-      <div class="welcome-avatar-wrap">
-        <div class="welcome-avatar-border">
-          <img src="assets/profile.png" alt="Shivam Kumar Maurya" class="welcome-avatar" />
-        </div>
-        <span class="welcome-avatar-ring"></span>
-      </div>
-
-      <h1 class="welcome-title">
-        Hello &amp; <span class="welcome-gradient-text">Welcome</span><span class="welcome-exclaim">!</span>
-      </h1>
-
-      <p class="welcome-message">
-        "Turning ideas into <span class="welcome-highlight">high-impact software</span>, intelligent systems &amp; winning solutions."
-      </p>
-
-      <div class="welcome-tech-tags">
-        <span class="chip-blue"><i class="fab fa-react"></i> Full-Stack</span>
-        <span class="chip-purple"><i class="fas fa-brain"></i> Machine Learning</span>
-        <span class="chip-amber"><i class="fas fa-trophy"></i> 2× National Winner</span>
-      </div>
-
-      <div class="welcome-progress-block">
-        <div class="welcome-bar">
-          <div class="welcome-bar-fill" id="welcome-bar-fill"></div>
-        </div>
-        <div class="welcome-status-row">
-          <span class="welcome-status-label" id="welcome-status-label">Setting up environment...</span>
-          <span class="welcome-pct" id="welcome-pct">0%</span>
-        </div>
-      </div>
-
-      <button class="welcome-enter-btn" id="welcome-enter-btn">
-        <span>Explore Portfolio</span> <i class="fas fa-arrow-right"></i>
-      </button>
-
-      <span class="welcome-tap-hint">
-        <i class="fas fa-hand-pointer"></i> Tap anywhere to enter &middot; Auto-opens in <span id="welcome-countdown">12s</span>
-      </span>
-    </div>
-  </div>
 
   <!-- ══════════════════════════════════
        NAVBAR
@@ -244,13 +192,12 @@
         <div class="hero-left">
           <div class="available-badge">
             <span class="available-dot"></span>
-            Available for Internships &amp; Full-Time Roles
+            Open to Full-Stack &amp; ML Opportunities
           </div>
 
           <h1 class="hero-name">
-            <span class="word">Hi, I'm</span><br />
-            <span class="word gradient-text">Shivam Kumar</span><br />
-            <span class="word gradient-text">Maurya.</span>
+            <span class="hero-line">Hi, I'm <span class="gradient-text">Shivam</span></span>
+            <span class="hero-line gradient-text">Kumar Maurya.</span>
           </h1>
 
           <div class="hero-title-badge">
@@ -259,17 +206,13 @@
           </div>
 
           <div class="hero-role">
-            I build
-            <div class="typewriter-wrapper">
-              <span class="typewriter-text" id="typewriter"></span>
-              <span class="cursor"></span>
-            </div>
+            Crafting <span class="hero-role-highlight" style="color:var(--accent);font-weight:700;">scalable web architectures</span>, cross-platform apps &amp; real-time ML systems.
           </div>
 
           <p class="hero-description">
             4th-year B.Tech CSE student passionate about scalable web apps, REST APIs, and ML systems.
             <strong>National Hackathon Winner</strong> (INR 32,000+ prizes) with hands-on experience
-            in React, Flutter, Node.js, Python, and OpenCV. Cisco-certified.
+            in React, Flutter, Node.js, Python, and OpenCV. Cisco &amp; IIT Kanpur NPTEL certified.
           </p>
 
           <div class="hero-actions">
@@ -277,13 +220,13 @@
               <i class="fas fa-rocket"></i>
               View My Work
             </a>
-            <a href="assets/Shivam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary" id="hero-resume-btn">
-              <i class="fas fa-file-download"></i>
-              Download CV
-            </a>
+            <button class="btn btn-secondary" id="hero-resume-preview-btn" title="Quick 1-Click Interactive Resume Preview">
+              <i class="fas fa-file-pdf"></i>
+              Preview Resume
+            </button>
             <a href="#contact" class="btn btn-outline" id="hero-contact-btn">
               <i class="fas fa-paper-plane"></i>
-              Hire Me
+              Contact Me
             </a>
           </div>
 
@@ -322,8 +265,8 @@
             <div class="float-badge badge-2">
               <span class="badge-icon"><i class="fas fa-laptop-code" style="color: #0284c7;"></i></span>
               <div>
-                <div class="badge-label">Projects Built</div>
-                <div class="badge-value">10+</div>
+                <div class="badge-label">Featured Projects</div>
+                <div class="badge-value">5+ Major</div>
               </div>
             </div>
 
@@ -370,7 +313,7 @@
 
         <div class="about-text reveal-about-text">
           <div>
-            <div class="section-tag">About Me</div>
+
             <h2 class="section-title">Building <span>Impactful</span> Software from Scratch</h2>
           </div>
 
@@ -396,18 +339,12 @@
             <!-- Tab Panel 1: Story -->
             <div class="about-tab-panel active" id="tab-story">
               <p class="about-bio">
-                I'm <strong>Shivam Kumar Maurya</strong>, a Full-Stack Software Engineer and Machine Learning enthusiast
-                in my 4th year of B.Tech CSE at <strong>Sagar Institute of Science, Technology and Research,
-                  Bhopal</strong>.
+                I'm <strong>Shivam Kumar Maurya</strong>, a Full-Stack &amp; ML Engineer in my 4th year of B.Tech CSE at <strong>SISTec-R Bhopal</strong>. 
+                Double National Hackathon Winner (TIC 2K26 1st Place &bull; BGI 2nd Place), architecting reliable systems from offline-first mobile apps to distributed cloud backends.
               </p>
               <p class="about-bio">
-                I specialise in building scalable web applications, cross-platform mobile apps, and intelligent ML
-                systems. My engineering work is fueled by curiosity, a solid foundation in software architecture, and
-                practical experience from development and hackathons.
+                I specialize in high-throughput REST APIs, responsive React interfaces, and real-time computer vision models with proven reliability under competitive, time-critical hackathon conditions.
               </p>
-              <div class="fancy-quote">
-                "I don't just write code — I build solutions that make a real-world difference."
-              </div>
             </div>
 
             <!-- Tab Panel 2: Education -->
@@ -418,50 +355,26 @@
                   <div class="edu-degree">B.Tech in Computer Science and Engineering</div>
                   <div class="edu-school">
                     <i class="fas fa-university"></i>
-                    Sagar Institute of Science, Technology and Research, Bhopal
+                    Sagar Institute of Science, Technology and Research (SISTec-R), Bhopal
                   </div>
                   <div class="edu-meta">
                     <span class="edu-badge year">2023 – 2027</span>
-                    <span class="edu-badge score">CGPA: 6.87 / 10</span>
                     <span class="edu-badge current">Currently 4th Year</span>
-                  </div>
-                </div>
-
-                <div class="edu-item reveal">
-                  <div class="edu-degree">Class XII — Science (PCM)</div>
-                  <div class="edu-school">
-                    <i class="fas fa-school"></i>
-                    Sardar Patel Inter College, Prayagraj
-                  </div>
-                  <div class="edu-meta">
-                    <span class="edu-badge year">2022</span>
-                    <span class="edu-badge score">67%</span>
-                  </div>
-                </div>
-
-                <div class="edu-item reveal">
-                  <div class="edu-degree">Class X</div>
-                  <div class="edu-school">
-                    <i class="fas fa-school"></i>
-                    Gopal Vidyalaya Inter College, Prayagraj
-                  </div>
-                  <div class="edu-meta">
-                    <span class="edu-badge year">2020</span>
-                    <span class="edu-badge score">73%</span>
+                    <span class="edu-badge score">RGPV Affiliated</span>
                   </div>
                 </div>
 
               </div>
             </div>
 
-            <!-- Tab Panel 2: Info & Stats -->
+            <!-- Tab Panel 3: Info & Stats -->
             <div class="about-tab-panel" id="tab-info">
               <div class="about-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon"><i class="fas fa-user-graduate"></i></span>
                   <div class="highlight-info">
                     <strong>Education</strong>
-                    <span>B.Tech CSE — CGPA 6.87</span>
+                    <span>B.Tech in CSE (2023–2027)</span>
                   </div>
                 </div>
                 <div class="highlight-item">
@@ -475,68 +388,68 @@
                   <span class="highlight-icon"><i class="fas fa-briefcase"></i></span>
                   <div class="highlight-info">
                     <strong>Looking For</strong>
-                    <span>Internship / Entry-Level</span>
+                    <span>Software Engineer / Intern Roles</span>
                   </div>
                 </div>
                 <div class="highlight-item">
-                  <span class="highlight-icon"><i class="fas fa-language"></i></span>
+                  <span class="highlight-icon"><i class="fas fa-code"></i></span>
                   <div class="highlight-info">
-                    <strong>Languages</strong>
-                    <span>English &amp; Hindi</span>
+                    <strong>Problem Solving</strong>
+                    <span>250+ DSA Solved &middot; C++ &amp; Python</span>
                   </div>
                 </div>
               </div>
 
               <div class="stats-row">
                 <div class="stat-card">
-                  <div class="stat-num" data-count="10" data-suffix="+">0+</div>
-                  <div class="stat-label">Projects Built</div>
+                  <div class="stat-num" data-count="5" data-suffix="+">0+</div>
+                  <div class="stat-label">Featured Projects</div>
                 </div>
                 <div class="stat-card">
                   <div class="stat-num" data-count="2" data-suffix="×">0×</div>
                   <div class="stat-label">National Winner</div>
                 </div>
                 <div class="stat-card">
-                  <div class="stat-num" data-count="3" data-suffix="">0</div>
-                  <div class="stat-label">Cisco Certs</div>
+                  <div class="stat-num" data-count="250" data-suffix="+">0+</div>
+                  <div class="stat-label">DSA Solved</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num" data-count="4" data-suffix="">0</div>
+                  <div class="stat-label">Certifications</div>
                 </div>
               </div>
             </div>
 
-            <!-- Tab Panel 3: My Approach -->
+            <!-- Tab Panel 4: My Approach -->
             <div class="about-tab-panel" id="tab-approach">
               <div class="approach-grid">
                 <div class="approach-item">
                   <div class="approach-head">
                     <span class="approach-num">01</span>
-                    <strong>Full-Stack Scalability</strong>
+                    <strong>Real-Time Critical Architecture</strong>
                   </div>
-                  <p class="approach-desc">Designing modular systems, RESTful APIs, and responsive frontends that
-                    perform consistently under high user load.</p>
+                  <p class="approach-desc">Architecting sub-second emergency pipelines with offline-first synchronization, background services, and live geolocation telemetry (proven in SHEild AI).</p>
                 </div>
                 <div class="approach-item">
                   <div class="approach-head">
                     <span class="approach-num">02</span>
-                    <strong>AI &amp; ML Integration</strong>
+                    <strong>Production Computer Vision</strong>
                   </div>
-                  <p class="approach-desc">Integrating intelligence into applications via Computer Vision (OpenCV), NLP,
-                    OCR pipelines, and prediction models.</p>
+                  <p class="approach-desc">Engineering robust OCR and ANPR pipelines with OpenCV, achieving 95%+ license plate extraction accuracy under complex, real-world lighting (Smart Parking).</p>
                 </div>
                 <div class="approach-item">
                   <div class="approach-head">
                     <span class="approach-num">03</span>
-                    <strong>Rapid Prototyping</strong>
+                    <strong>High-Throughput Web Platforms</strong>
                   </div>
-                  <p class="approach-desc">Leveraging rapid feedback loops during hackathons to build functional,
-                    polished, and winning software architectures quickly.</p>
+                  <p class="approach-desc">Building resilient full-stack architectures with edge caching that comfortably served 500+ active innovators and teams with zero downtime (SISTec SIH 4.0).</p>
                 </div>
                 <div class="approach-item">
                   <div class="approach-head">
                     <span class="approach-num">04</span>
-                    <strong>Continuous Adaptation</strong>
+                    <strong>Defensive Code &amp; Security</strong>
                   </div>
-                  <p class="approach-desc">Deep-diving into new frameworks, algorithms, and core CS concepts to remain
-                    competitive and deliver cutting-edge solutions.</p>
+                  <p class="approach-desc">Applying strict REST API contracts, input sanitization, and Cisco-certified cybersecurity practices to safeguard every data flow and user endpoint.</p>
                 </div>
               </div>
             </div>
@@ -548,11 +461,10 @@
               <i class="fas fa-handshake"></i>
               Hire Me
             </a>
-            <a href="assets/Shivam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline"
-              id="about-resume-btn">
+            <button class="btn btn-secondary" id="about-resume-preview-btn" title="Quick 1-Click Resume Preview">
               <i class="fas fa-file-pdf"></i>
-              View Resume
-            </a>
+              Preview CV
+            </button>
           </div>
         </div>
 
@@ -571,11 +483,8 @@
     <div class="container">
 
       <div class="skills-header reveal">
-        <div class="section-tag">Expertise</div>
         <h2 class="section-title">Technical <span>Skills</span></h2>
         <span class="section-divider"></span>
-        <p class="section-subtitle">Technologies and tools I've worked with across full-stack, mobile, and AI/ML
-          projects.</p>
       </div>
 
       <div class="skills-tabs reveal">
@@ -622,15 +531,6 @@
             <span>Redux</span>
             <span>Router</span>
           </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">88%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="88"></div>
-            </div>
-          </div>
         </div>
 
         <!-- 2. Flutter / Mobile -->
@@ -652,15 +552,6 @@
             <span>Provider</span>
             <span>Firebase</span>
             <span>APIs</span>
-          </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">85%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="85"></div>
-            </div>
           </div>
         </div>
 
@@ -684,15 +575,6 @@
             <span>Animations</span>
             <span>Responsive</span>
           </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">92%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="92"></div>
-            </div>
-          </div>
         </div>
 
         <!-- 4. Node.js & Express -->
@@ -714,15 +596,6 @@
             <span>JWT Auth</span>
             <span>Sockets</span>
             <span>Middleware</span>
-          </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">86%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="86"></div>
-            </div>
           </div>
         </div>
 
@@ -746,15 +619,6 @@
             <span>Pandas</span>
             <span>NumPy</span>
           </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">88%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="88"></div>
-            </div>
-          </div>
         </div>
 
         <!-- 6. MongoDB & Databases -->
@@ -776,15 +640,6 @@
             <span>Postgres</span>
             <span>Firestore</span>
             <span>Queries</span>
-          </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">82%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="82"></div>
-            </div>
           </div>
         </div>
 
@@ -808,15 +663,6 @@
             <span>HuggingFace</span>
             <span>NLP</span>
           </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">80%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="80"></div>
-            </div>
-          </div>
         </div>
 
         <!-- 8. OpenCV & Vision -->
@@ -839,15 +685,6 @@
             <span>Filters</span>
             <span>Leaflet</span>
           </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">85%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="85"></div>
-            </div>
-          </div>
         </div>
 
         <!-- 9. Git & Tools -->
@@ -869,15 +706,6 @@
             <span>GitHub</span>
             <span>Postman</span>
             <span>CI/CD</span>
-          </div>
-          <div class="skill-bar-wrapper">
-            <div class="skill-bar-header">
-              <span class="skill-bar-label">Proficiency</span>
-              <span class="skill-bar-pct">90%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="90"></div>
-            </div>
           </div>
         </div>
 
@@ -925,10 +753,7 @@
     <div class="container">
 
       <div class="projects-header reveal">
-        <div class="section-tag">Portfolio</div>
         <h2 class="section-title">Featured <span>Projects</span></h2>
-        <p class="section-subtitle">Real-world solutions I've designed, built, and shipped — from safety apps to
-          AI-powered platforms.</p>
 
         <div class="projects-toolbar">
           <div class="filter-bar">
@@ -937,528 +762,11 @@
             <button class="filter-btn" data-filter="web" id="filter-web"><i class="fas fa-globe"></i> Web Apps</button>
             <button class="filter-btn" data-filter="ml" id="filter-ml"><i class="fas fa-microchip"></i> AI / ML</button>
           </div>
-          <div class="view-mode-toggle">
-            <button class="view-mode-btn active" data-mode="deck" id="view-mode-deck" title="Interactive Studio Deck">
-              <i class="fas fa-layer-group"></i> <span>Studio Deck</span>
-            </button>
-            <button class="view-mode-btn" data-mode="bento" id="view-mode-bento" title="Bento Grid Showcase">
-              <i class="fas fa-table-cells-large"></i> <span>Bento Grid</span>
-            </button>
-          </div>
         </div>
       </div>
 
-      <!-- ══════════════════════════════════════════
-           VIEW 1: NEXT-GEN INTERACTIVE STUDIO DECK
-           ══════════════════════════════════════════ -->
-      <div class="projects-deck-container" id="projects-deck-view">
-        <div class="projects-deck-frame">
-
-          <!-- Tactile Horizontal Segmented Dock -->
-          <div class="deck-nav-dock">
-            <button class="deck-dock-tab active" data-project="shield-ai" data-category="mobile" id="dock-shield-ai">
-              <div class="dock-tab-head">
-                <span class="dock-num">01</span>
-                <i class="fas fa-shield-halved dock-icon"></i>
-              </div>
-              <div class="dock-tab-body">
-                <span class="dock-title">SHEild AI</span>
-                <span class="dock-pill gold"><i class="fas fa-trophy"></i> 1st Prize TIC</span>
-              </div>
-            </button>
-
-            <button class="deck-dock-tab" data-project="sistec-sih" data-category="web" id="dock-sistec-sih">
-              <div class="dock-tab-head">
-                <span class="dock-num">02</span>
-                <i class="fas fa-fire dock-icon"></i>
-              </div>
-              <div class="dock-tab-body">
-                <span class="dock-title">SISTec SIH 4.0</span>
-                <span class="dock-pill indigo"><i class="fas fa-users"></i> 500+ Innovators</span>
-              </div>
-            </button>
-
-            <button class="deck-dock-tab" data-project="royalbite" data-category="web" id="dock-royalbite">
-              <div class="dock-tab-head">
-                <span class="dock-num">03</span>
-                <i class="fas fa-utensils dock-icon"></i>
-              </div>
-              <div class="dock-tab-body">
-                <span class="dock-title">RoyalBite Dine</span>
-                <span class="dock-pill amber"><i class="fas fa-crown"></i> Fine Dine Live</span>
-              </div>
-            </button>
-
-            <button class="deck-dock-tab" data-project="shyam-events" data-category="web" id="dock-shyam-events">
-              <div class="dock-tab-head">
-                <span class="dock-num">04</span>
-                <i class="fas fa-champagne-glasses dock-icon"></i>
-              </div>
-              <div class="dock-tab-body">
-                <span class="dock-title">Shri Shyam Events</span>
-                <span class="dock-pill purple"><i class="fas fa-wand-magic-sparkles"></i> Weddings &amp; Events</span>
-              </div>
-            </button>
-
-            <button class="deck-dock-tab" data-project="smart-parking" data-category="web ml" id="dock-smart-parking">
-              <div class="dock-tab-head">
-                <span class="dock-num">05</span>
-                <i class="fas fa-square-parking dock-icon"></i>
-              </div>
-              <div class="dock-tab-body">
-                <span class="dock-title">Smart Parking</span>
-                <span class="dock-pill cyan"><i class="fas fa-chart-line"></i> +35% OCR</span>
-              </div>
-            </button>
-
-          </div>
-
-          <!-- Studio Stage: Active Project Panels -->
-          <div class="deck-stage-wrapper">
-
-            <!-- 1. SHEild AI -->
-            <article class="deck-project-card active" id="deck-shield-ai" data-category="mobile">
-              <div class="deck-card-grid">
-                <div class="deck-intel-col">
-                  <div class="deck-cat-badge award-badge">
-                    <i class="fas fa-trophy"></i>
-                    <span>1st Prize Winner · TIC 2K26 (₹20,000)</span>
-                  </div>
-
-                  <h3 class="deck-project-title">SHEild AI — Women Safety Platform</h3>
-
-                  <!-- Sleek KPI Metrics Grid -->
-                  <div class="deck-metrics-grid rose-theme">
-                    <div class="deck-metric-box">
-                      <span class="metric-val">200+</span>
-                      <span class="metric-lbl">Active Users</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">&lt;2s</span>
-                      <span class="metric-lbl">SOS Dispatch</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">100%</span>
-                      <span class="metric-lbl">GPS Accuracy</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">24/7</span>
-                      <span class="metric-lbl">Cloud Sync</span>
-                    </div>
-                  </div>
-
-                  <p class="deck-project-desc">
-                    An advanced production-ready women safety platform serving 200+ test users. Implements voice-triggered emergency SOS activations, real-time precise GPS telemetry, and instant automated alert broadcasts to designated emergency contacts.
-                  </p>
-
-                  <div class="deck-features-list">
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Voice-Activated SOS Trigger:</strong> Instant background listening &amp; automated silent alarm broadcast</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Live GPS Telemetry:</strong> Real-time breadcrumb movement history mapped on Google Maps API</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Emergency Cloud Dispatch:</strong> Firebase Firestore sync with SMS &amp; emergency contact routing</span>
-                    </div>
-                  </div>
-
-                  <div class="deck-tags-row">
-                    <span class="deck-tech-chip"><i class="fab fa-flutter"></i> Flutter</span>
-                    <span class="deck-tech-chip"><i class="fas fa-fire"></i> Firebase</span>
-                    <span class="deck-tech-chip"><i class="fas fa-leaf"></i> MongoDB</span>
-                    <span class="deck-tech-chip"><i class="fas fa-map-location-dot"></i> Google Maps API</span>
-                  </div>
-
-                  <div class="deck-actions-row">
-                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-shield">
-                      <i class="fab fa-github"></i> <span>Explore Source Code</span>
-                    </a>
-                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/sheild_ai.png" id="lightbox-shield">
-                      <i class="fas fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="deck-media-col">
-                  <div class="deck-device-mockup" data-lightbox="assets/projects/sheild_ai.png">
-                    <div class="mockup-screen">
-                      <img src="assets/projects/sheild_ai.png" alt="SHEild AI – Women Safety Application" loading="lazy" />
-                      <div class="mockup-screen-overlay">
-                        <span class="screen-preview-pill"><i class="fas fa-magnifying-glass-plus"></i> Click to Enlarge</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 2. SISTec Innovation Hackathon 4.0 -->
-            <article class="deck-project-card" id="deck-sistec-sih" data-category="web">
-              <div class="deck-card-grid">
-                <div class="deck-intel-col">
-                  <div class="deck-cat-badge live-badge">
-                    <span class="pulse-dot"></span>
-                    <span>Live Production Portal · SISTec Bhopal</span>
-                  </div>
-
-                  <h3 class="deck-project-title">SISTec Innovation Hackathon 4.0 (SIH 4.0)</h3>
-
-                  <!-- Sleek KPI Metrics Grid -->
-                  <div class="deck-metrics-grid indigo-theme">
-                    <div class="deck-metric-box">
-                      <span class="metric-val">500+</span>
-                      <span class="metric-lbl">Innovators</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">55+</span>
-                      <span class="metric-lbl">Problems</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">₹1 Lakh</span>
-                      <span class="metric-lbl">Prize Pool</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">24 Hrs</span>
-                      <span class="metric-lbl">Live Hack</span>
-                    </div>
-                  </div>
-
-                  <p class="deck-project-desc">
-                    The official live production portal for the nationwide 24-hour hackathon hosted at SISTec Ratibad, Bhopal. Engineered with instant responsive layouts, real-time schedule tracking, searchable problem statements repository, and team registration workflows.
-                  </p>
-
-                  <div class="deck-features-list">
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>55 Industry Problem Statements:</strong> Curated across AI/ML, IoT, Web &amp; Robotics domains</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Synchronized Event Ops:</strong> Real-time 24-hr countdown timer &amp; nationwide team registration</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Production-Grade Engineering:</strong> Sub-second LCP, Cloudflare CDN edge &amp; India geo-SEO</span>
-                    </div>
-                  </div>
-
-                  <div class="deck-tags-row">
-                    <span class="deck-tech-chip"><i class="fab fa-html5"></i> HTML5</span>
-                    <span class="deck-tech-chip"><i class="fab fa-css3-alt"></i> Tailwind CSS</span>
-                    <span class="deck-tech-chip"><i class="fab fa-js"></i> JavaScript</span>
-                    <span class="deck-tech-chip"><i class="fas fa-shield-halved"></i> Cloudflare CDN</span>
-                  </div>
-
-                  <div class="deck-actions-row">
-                    <a href="https://www.sistecrsih.in/" target="_blank" rel="noopener" class="btn-pill live-btn" id="live-sistec">
-                      <i class="fas fa-arrow-up-right-from-square"></i> <span>Visit Live Site</span>
-                    </a>
-                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-sistec">
-                      <i class="fab fa-github"></i> <span>Explore Source</span>
-                    </a>
-                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/sistec_hackathon.png" id="lightbox-sistec">
-                      <i class="fas fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="deck-media-col">
-                  <div class="deck-device-mockup" data-lightbox="assets/projects/sistec_hackathon.png">
-                    <div class="mockup-screen">
-                      <img src="assets/projects/sistec_hackathon.png" alt="SISTec Innovation Hackathon 4.0 Platform" loading="lazy" />
-                      <div class="mockup-screen-overlay">
-                        <span class="screen-preview-pill"><i class="fas fa-magnifying-glass-plus"></i> Click to Enlarge</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 3. RoyalBite Fine Dine -->
-            <article class="deck-project-card" id="deck-royalbite" data-category="web">
-              <div class="deck-card-grid">
-                <div class="deck-intel-col">
-                  <div class="deck-cat-badge live-badge amber-badge">
-                    <span class="pulse-dot"></span>
-                    <span>Live Culinary Platform · Vercel Hosted</span>
-                  </div>
-
-                  <h3 class="deck-project-title">RoyalBite — Fine Dine &amp; Table Reservation</h3>
-
-                  <!-- Sleek KPI Metrics Grid -->
-                  <div class="deck-metrics-grid amber-theme">
-                    <div class="deck-metric-box">
-                      <span class="metric-val">2,000+</span>
-                      <span class="metric-lbl">Happy Diners</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">30+</span>
-                      <span class="metric-lbl">Artisan Dishes</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">4.9★</span>
-                      <span class="metric-lbl">Cuisine Rating</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">Instant</span>
-                      <span class="metric-lbl">Table Booking</span>
-                    </div>
-                  </div>
-
-                  <p class="deck-project-desc">
-                    A luxurious, fine dining web application designed for a premium culinary brand. Features an interactive menu filtered across signature courses, real-time table reservation scheduling, wine selection pairing, and editorial aesthetics.
-                  </p>
-
-                  <div class="deck-features-list">
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Dynamic Multi-Course Menu:</strong> Filterable across appetizers, signature chef specials &amp; desserts</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Table Reservation Engine:</strong> Real-time booking modal with date picker, time slot &amp; guest count</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Editorial Design System:</strong> Cormorant typography, gold accents, micro-animations &amp; Lucide icons</span>
-                    </div>
-                  </div>
-
-                  <div class="deck-tags-row">
-                    <span class="deck-tech-chip"><i class="fab fa-html5"></i> HTML5</span>
-                    <span class="deck-tech-chip"><i class="fab fa-css3-alt"></i> Modern CSS</span>
-                    <span class="deck-tech-chip"><i class="fab fa-js"></i> JavaScript</span>
-                    <span class="deck-tech-chip"><i class="fas fa-feather"></i> Lucide Icons</span>
-                    <span class="deck-tech-chip"><i class="fas fa-cloud"></i> Vercel</span>
-                  </div>
-
-                  <div class="deck-actions-row">
-                    <a href="https://resturant-ui-zeta.vercel.app/" target="_blank" rel="noopener" class="btn-pill live-btn" id="live-royalbite">
-                      <i class="fas fa-arrow-up-right-from-square"></i> <span>Visit Live Site</span>
-                    </a>
-                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-royalbite">
-                      <i class="fab fa-github"></i> <span>Explore Source</span>
-                    </a>
-                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/royalbite.png" id="lightbox-royalbite">
-                      <i class="fas fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="deck-media-col">
-                  <div class="deck-device-mockup" data-lightbox="assets/projects/royalbite.png">
-                    <div class="mockup-screen">
-                      <img src="assets/projects/royalbite.png" alt="RoyalBite Fine Dine Website" loading="lazy" />
-                      <div class="mockup-screen-overlay">
-                        <span class="screen-preview-pill"><i class="fas fa-magnifying-glass-plus"></i> Click to Enlarge</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 4. Shri Shyam Events -->
-            <article class="deck-project-card" id="deck-shyam-events" data-category="web">
-              <div class="deck-card-grid">
-                <div class="deck-intel-col">
-                  <div class="deck-cat-badge live-badge purple-badge">
-                    <span class="pulse-dot"></span>
-                    <span>Commercial Client · Rehti (M.P.)</span>
-                  </div>
-
-                  <h3 class="deck-project-title">Shri Shyam Events — Royal Wedding &amp; Decor</h3>
-
-                  <!-- Sleek KPI Metrics Grid -->
-                  <div class="deck-metrics-grid purple-theme">
-                    <div class="deck-metric-box">
-                      <span class="metric-val">550+</span>
-                      <span class="metric-lbl">Events Done</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">100%</span>
-                      <span class="metric-lbl">Certified Safe</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">4.9★</span>
-                      <span class="metric-lbl">Client Rating</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">Instant</span>
-                      <span class="metric-lbl">WhatsApp Book</span>
-                    </div>
-                  </div>
-
-                  <p class="deck-project-desc">
-                    A high-impact commercial client website built for Shri Shyam Events (Rehti, MP). Features an interactive visual gallery of grand wedding stage setups, dry ice heavy fog bride/groom entries, cold pyro spark machines, and instant WhatsApp booking integration.
-                  </p>
-
-                  <div class="deck-features-list">
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Transformation Gallery:</strong> Filterable categories for grand wedding stages, reception &amp; varmala setups</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Direct WhatsApp Booking:</strong> Automated pre-filled event date, service package &amp; budget inquiry</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Mobile-First Performance:</strong> Lightweight architecture optimized for fast load on 4G networks</span>
-                    </div>
-                  </div>
-
-                  <div class="deck-tags-row">
-                    <span class="deck-tech-chip"><i class="fab fa-html5"></i> HTML5</span>
-                    <span class="deck-tech-chip"><i class="fab fa-css3-alt"></i> CSS3</span>
-                    <span class="deck-tech-chip"><i class="fab fa-js"></i> JavaScript</span>
-                    <span class="deck-tech-chip"><i class="fab fa-whatsapp"></i> WhatsApp API</span>
-                    <span class="deck-tech-chip"><i class="fab fa-github"></i> GitHub Pages</span>
-                  </div>
-
-                  <div class="deck-actions-row">
-                    <a href="https://shivam1264.github.io/EVENT-WEBSITE-/" target="_blank" rel="noopener" class="btn-pill live-btn" id="live-shyam">
-                      <i class="fas fa-arrow-up-right-from-square"></i> <span>Visit Live Site</span>
-                    </a>
-                    <a href="https://github.com/shivam1264/EVENT-WEBSITE-" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-shyam">
-                      <i class="fab fa-github"></i> <span>Explore Source</span>
-                    </a>
-                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/shyam_events.png" id="lightbox-shyam">
-                      <i class="fas fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="deck-media-col">
-                  <div class="deck-device-mockup" data-lightbox="assets/projects/shyam_events.png">
-                    <div class="mockup-screen">
-                      <img src="assets/projects/shyam_events.png" alt="Shri Shyam Events Website" loading="lazy" />
-                      <div class="mockup-screen-overlay">
-                        <span class="screen-preview-pill"><i class="fas fa-magnifying-glass-plus"></i> Click to Enlarge</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- 5. Smart Parking -->
-            <article class="deck-project-card" id="deck-smart-parking" data-category="web ml">
-              <div class="deck-card-grid">
-                <div class="deck-intel-col">
-                  <div class="deck-cat-badge">
-                    <i class="fas fa-eye"></i>
-                    <span>Computer Vision &amp; Web Platform</span>
-                  </div>
-
-                  <h3 class="deck-project-title">Smart Parking System with ANPR</h3>
-
-                  <!-- Sleek KPI Metrics Grid -->
-                  <div class="deck-metrics-grid cyan-theme">
-                    <div class="deck-metric-box">
-                      <span class="metric-val">+35%</span>
-                      <span class="metric-lbl">OCR Accuracy</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">&lt;800ms</span>
-                      <span class="metric-lbl">Plate Scan</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">Levenshtein</span>
-                      <span class="metric-lbl">Correction</span>
-                    </div>
-                    <div class="deck-metric-box">
-                      <span class="metric-val">Live</span>
-                      <span class="metric-lbl">Slot Map</span>
-                    </div>
-                  </div>
-
-                  <p class="deck-project-desc">
-                    High-speed automated vehicle entry and exit tracking using OpenCV and EasyOCR. Features a custom error-correction pipeline utilizing Levenshtein Distance and bigram token frequency, significantly boosting license plate recognition in varied lighting.
-                  </p>
-
-                  <div class="deck-features-list">
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>High-Speed License Plate Scan:</strong> Automated vehicle detection &amp; gate logging via OpenCV</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>OCR Error-Correction Engine:</strong> Levenshtein Distance &amp; bigram disambiguation pipeline</span>
-                    </div>
-                    <div class="deck-feature-item">
-                      <span class="feature-check"><i class="fas fa-check"></i></span>
-                      <span class="feature-text"><strong>Live Interactive Dashboard:</strong> Real-time parking slot occupancy mapped on Leaflet.js</span>
-                    </div>
-                  </div>
-
-                  <div class="deck-tags-row">
-                    <span class="deck-tech-chip"><i class="fab fa-python"></i> Python / Flask</span>
-                    <span class="deck-tech-chip"><i class="fas fa-eye"></i> OpenCV</span>
-                    <span class="deck-tech-chip"><i class="fas fa-keyboard"></i> EasyOCR</span>
-                    <span class="deck-tech-chip"><i class="fab fa-react"></i> React Native</span>
-                  </div>
-
-                  <div class="deck-actions-row">
-                    <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="btn-pill code-btn" id="github-parking">
-                      <i class="fab fa-github"></i> <span>Explore Source Code</span>
-                    </a>
-                    <button class="btn-pill outline-btn view-btn" data-lightbox="assets/projects/project1.png" id="lightbox-parking">
-                      <i class="fas fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="deck-media-col">
-                  <div class="deck-device-mockup" data-lightbox="assets/projects/project1.png">
-                    <div class="mockup-screen">
-                      <img src="assets/projects/project1.png" alt="Smart Parking System with ANPR" loading="lazy" />
-                      <div class="mockup-screen-overlay">
-                        <span class="screen-preview-pill"><i class="fas fa-magnifying-glass-plus"></i> Click to Enlarge</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Bottom Telemetry & Step Controller -->
-          <div class="deck-footer-bar">
-            <div class="deck-counter-info">
-              <span class="counter-label">PROJECT</span>
-              <strong class="counter-val" id="deck-counter-display">01 / 05</strong>
-              <div class="deck-step-dots" id="deck-step-dots">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-                <span class="dot" data-index="3"></span>
-                <span class="dot" data-index="4"></span>
-              </div>
-            </div>
-
-            <div class="deck-nav-buttons">
-              <button class="deck-arrow-btn" id="deck-prev-btn" aria-label="Previous Project">
-                <i class="fas fa-arrow-left"></i> <span>Prev</span>
-              </button>
-              <button class="deck-arrow-btn" id="deck-next-btn" aria-label="Next Project">
-                <span>Next</span> <i class="fas fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══════════════════════════════════════════
-           VIEW 2: CONTEMPORARY 6-CARD BENTO GRID
-           ══════════════════════════════════════════ -->
-      <div class="projects-bento-container" id="projects-bento-view" style="display: none;">
+      <!-- PROJECTS BENTO GRID -->
+      <div class="projects-bento-container" id="projects-bento-view">
         <div class="bento-grid-wrapper">
 
           <!-- Bento Card 1: SHEild AI (Featured 2-col) -->
@@ -1617,10 +925,8 @@
     <div class="container">
 
       <div class="reveal">
-        <div class="section-tag">Recognition</div>
         <h2 class="section-title">Awards &amp; <span>Achievements</span></h2>
         <span class="section-divider"></span>
-        <p class="section-subtitle">Recognitions earned through competitive hackathons and academic excellence.</p>
       </div>
 
       <div class="achievements-grid two-cols">
@@ -1652,9 +958,14 @@
 
           <div class="hackathon-footer">
             <span class="prize-tag"><i class="fas fa-gift"></i> INR 20,000 Prize</span>
-            <a href="#projects" class="view-project-link" data-project="shield-ai">
-              View Project <i class="fas fa-arrow-right"></i>
-            </a>
+            <div class="hackathon-footer-actions">
+              <button class="award-proof-btn" data-proof="tic-2k26" aria-label="View TIC 2K26 Award Proof">
+                <i class="fas fa-certificate"></i> View Proof
+              </button>
+              <a href="#projects" class="view-project-link" data-project="shield-ai">
+                View Project <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1685,9 +996,14 @@
 
           <div class="hackathon-footer">
             <span class="prize-tag"><i class="fas fa-gift"></i> INR 12,000 Prize</span>
-            <a href="#projects" class="view-project-link" data-project="shield-ai">
-              View Project <i class="fas fa-arrow-right"></i>
-            </a>
+            <div class="hackathon-footer-actions">
+              <button class="award-proof-btn" data-proof="bgi-2026" aria-label="View BGI Hackathon 2026 Award Proof">
+                <i class="fas fa-certificate"></i> View Proof
+              </button>
+              <a href="#projects" class="view-project-link" data-project="shield-ai">
+                View Project <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1702,7 +1018,6 @@
   <section id="certifications">
     <div class="container">
       <div class="reveal">
-        <div class="section-tag">Credentials</div>
         <h2 class="section-title">Certifi&shy;<span>cations</span></h2>
         <span class="section-divider"></span>
       </div>
@@ -1843,7 +1158,7 @@
 
           <div class="cert-info">
             <h3 class="cert-name">Cloud Computing &amp; Distributed Systems</h3>
-            <span class="cert-issuer">NPTEL — IIT Kanpur</span>
+            <span class="cert-issuer">NPTEL &bull; IIT Kanpur (Score: 69% &bull; Elite)</span>
           </div>
 
           <div class="cert-skills-tags">
@@ -1876,7 +1191,6 @@
         <!-- Left -->
         <div class="contact-info reveal-left">
           <div class="contact-intro">
-            <div class="section-tag">Get In Touch</div>
             <h2 class="section-title">Let's <span>Connect</span></h2>
             <p class="contact-intro-text">
               I'm actively looking for internship opportunities or entry-level roles in backend development or ML
@@ -1886,18 +1200,31 @@
           </div>
 
           <div class="contact-details">
-            <a href="mailto:mauryashivamkumar841@gmail.com" class="contact-item" id="contact-email-link">
-              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-              <div class="contact-item-info">
-                <strong>Email</strong>
-                <span>mauryashivamkumar841@gmail.com</span>
-              </div>
-            </a>
+            <div class="contact-email-row">
+              <a href="mailto:mauryashivamkumar841@gmail.com" class="contact-item" id="contact-email-link">
+                <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-item-info">
+                  <strong>Email</strong>
+                  <span id="contact-email-val">mauryashivamkumar841@gmail.com</span>
+                </div>
+              </a>
+              <button class="copy-email-btn" id="copy-email-btn" title="Copy Email to Clipboard" aria-label="Copy Email Address">
+                <i class="fas fa-copy"></i>
+                <span class="copy-tooltip">Copy</span>
+              </button>
+            </div>
             <a href="tel:+917235986871" class="contact-item" id="contact-phone-link">
               <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
               <div class="contact-item-info">
                 <strong>Phone</strong>
                 <span>+91 72359 86871</span>
+              </div>
+            </a>
+            <a href="https://wa.me/917235986871?text=Hi%20Shivam,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you!" target="_blank" rel="noopener" class="contact-item contact-item-whatsapp" id="contact-whatsapp-link">
+              <div class="contact-item-icon whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
+              <div class="contact-item-info">
+                <strong>WhatsApp Direct</strong>
+                <span>+91 72359 86871 &middot; Quick HR Chat</span>
               </div>
             </a>
             <div class="contact-item">
@@ -1927,7 +1254,9 @@
         <!-- Right: Form -->
         <div class="contact-form-wrap reveal-right">
           <div class="form-title">Send a <span>Message</span> <i class="fas fa-paper-plane form-title-icon"></i></div>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" action="https://formsubmit.co/mauryashivamkumar841@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
             <div class="form-grid">
               <div class="form-group float-label">
                 <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
@@ -1967,7 +1296,7 @@
       <div class="footer-inner">
         <div class="footer-logo">Shivam<span>.</span></div>
         <p class="footer-copy">
-          © 2025 Shivam Kumar Maurya. Made with <span class="footer-heart"><i class="fas fa-heart"></i></span> in India
+          © 2026 Shivam Kumar Maurya. Made with <span class="footer-heart"><i class="fas fa-heart"></i></span> in India
         </p>
         <div class="footer-socials">
           <a href="https://github.com/shivam1264" target="_blank" rel="noopener" class="social-link" id="footer-github"
@@ -1988,11 +1317,70 @@
 
   <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-  <!-- PAGE WIPE TRANSITION -->
-  <div id="page-wipe">
-    <div class="wipe-panel wipe-panel-1"></div>
-    <div class="wipe-panel wipe-panel-2"></div>
-    <div class="wipe-logo">Shivam<span>.</span></div>
+  <!-- RESUME PREVIEW MODAL -->
+  <div class="resume-modal-backdrop" id="resume-modal" role="dialog" aria-modal="true" aria-label="Shivam Kumar Maurya Resume Preview">
+    <div class="resume-modal-dialog">
+      <div class="resume-modal-header">
+        <div class="resume-modal-title">
+          <i class="fas fa-file-pdf" style="color:var(--accent);"></i>
+          <span>Shivam Kumar Maurya &mdash; Resume</span>
+        </div>
+        <div class="resume-modal-actions">
+          <a href="assets/Shivam_Kumar_Maurya_Resume.pdf" download="Shivam_Kumar_Maurya_Resume.pdf" class="btn-modal-action download-btn" id="modal-download-cv">
+            <i class="fas fa-file-arrow-down"></i> <span>Download PDF</span>
+          </a>
+          <a href="assets/Shivam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="btn-modal-action tab-btn" id="modal-open-tab">
+            <i class="fas fa-arrow-up-right-from-square"></i> <span>Open Full</span>
+          </a>
+          <button class="resume-modal-close" id="resume-modal-close" aria-label="Close Resume Preview">
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <iframe src="assets/Shivam_Kumar_Maurya_Resume.pdf#toolbar=0&navpanes=0" title="Shivam Kumar Maurya Resume" class="resume-iframe" id="resume-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- AWARD PROOF LIGHTBOX MODAL -->
+  <div class="award-modal-backdrop" id="award-proof-modal" role="dialog" aria-modal="true" aria-label="Official Award Proof and Certificate">
+    <div class="award-modal-dialog">
+      <div class="award-modal-header">
+        <div class="award-modal-title">
+          <span class="award-verified-icon"><i class="fas fa-circle-check"></i></span>
+          <div>
+            <h3 id="award-modal-heading">TIC 2K26 National Hackathon</h3>
+            <span class="award-modal-sub" id="award-modal-subtitle">Official Winner Certificate &bull; 1st Place Champion</span>
+          </div>
+        </div>
+        <div class="award-modal-actions">
+          <a href="assets/tic_2k26_award.jpg" target="_blank" rel="noopener" class="btn-modal-action tab-btn" id="award-open-full">
+            <i class="fas fa-expand"></i> <span>View Original</span>
+          </a>
+          <button class="award-modal-close" id="award-modal-close" aria-label="Close Award Proof">
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="award-modal-body">
+        <div class="award-image-wrap">
+          <img src="assets/tic_2k26_award.jpg" alt="Official Award Certificate" id="award-proof-img" class="award-proof-img" loading="lazy">
+        </div>
+        <div class="award-details-bar" id="award-details-bar">
+          <div class="award-meta-pill prize-pill"><i class="fas fa-trophy"></i> <span id="award-pill-prize">1st Place &bull; INR 20,000</span></div>
+          <div class="award-meta-pill"><i class="fas fa-users"></i> <span id="award-pill-team">Team NEXUS</span></div>
+          <div class="award-meta-pill"><i class="fas fa-shield-heart"></i> <span>Project: SHEild AI</span></div>
+          <div class="award-meta-pill verified-pill"><i class="fas fa-check-circle"></i> <span>Verified Credential</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION -->
+  <div id="portfolio-toast" class="portfolio-toast" role="status" aria-live="polite">
+    <i class="fas fa-circle-check"></i>
+    <span id="toast-msg">Email copied to clipboard!</span>
   </div>
 
   <script src="script.js"></script>
